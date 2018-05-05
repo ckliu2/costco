@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.base.value.MiscCode" table="COM_MiscCode">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="codeName" type="string" length="100" not-null="true" />
+		<property name="keyName" type="string" length="100" not-null="true" />
+		<property name="valueCh" type="string" length="100" not-null="true" />
+		<property name="valueEn" type="string" length="100" not-null="true" />
+		<property name="seqNo" type="integer" not-null="true" />
+	</class>
+	<class name="com.base.value.AppProperty" table="COM_AppProperty">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="seqNo" type="integer" not-null="true" />
+		<property name="kind" type="string" length="255" not-null="true" />
+		<property name="subKind" type="string" length="100" />
+		<property name="valueTw" type="string" length="350" not-null="false" />
+		<property name="valueUs" type="string" length="350" not-null="false" />
+		<property name="code" type="string" length="350" not-null="false" />
+	</class>
+	<class name="com.base.value.UploadedFile" table="COM_UploadedFile">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="fileName" type="string" length="255" />
+		<property name="size" type="long" />
+		<property name="memo" type="string" />
+		<property name="branch" type="string" />
+		<property name="lastModifiedDate" type="timestamp" column="lastModifiedDate" />
+	</class>
+	<class name="com.base.value.Group" table="COM_Group">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="groupKey" type="string" length="100" not-null="true" />
+		<property name="groupNameCh" type="string" length="100" not-null="true" />
+		<property name="groupNameEn" type="string" length="100" not-null="true" />
+		<set name="members" table="COM_MemberGroup" cascade="save-update">
+			<key column="groupId" />
+			<many-to-many class="com.common.value.Member" column="memberId" />
+		</set>
+	</class>
+	<class name="com.base.value.FunctionCategory" table="COM_FunctionCategory">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="seqNo" type="integer" not-null="true" />
+		<property name="nameCh" type="string" length="100" not-null="true" />
+		<property name="nameEn" type="string" length="100" not-null="true" />
+	</class>
+	<class name="com.base.value.Function" table="COM_Function">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="seqNo" type="integer" not-null="true" />
+		<property name="funKey" type="string" length="100" not-null="true" />
+		<property name="funNameCh" type="string" length="100" not-null="true" />
+		<property name="funNameEn" type="string" length="100" not-null="true" />
+		<property name="funUrl" type="string" length="150" not-null="true" />
+		<property name="descCh" type="string" length="300" />
+		<property name="descEn" type="string" length="300" />
+		<property name="editBegin" type="date" column="editBegin" />
+		<property name="editEnd" type="date" column="editEnd" />
+		<property name="disabled" type="boolean" column="disabled" />
+		<many-to-one name="category" class="com.base.value.FunctionCategory" lazy="false" column="category" cascade="none" />
+		<list name="authority" cascade="none" lazy="false" table="COM_FunctionAuthority">
+			<meta attribute="widget">two-list</meta>
+			<key column="funId" />
+			<index column="idx" />
+			<composite-element class="com.base.value.FunctionAuthority">
+				<property name="editable" type="boolean" column="editable" />
+				<many-to-one name="group" column="groupId" class="com.base.value.Group" not-null="true" />
+			</composite-element>
+		</list>
+	</class>
+	 
+	 
+	<class name="com.common.value.Unit" table="COM_Unit">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="name" type="string" length="100" not-null="true" />		
+		<set name="members" table="COM_MemberUnit" cascade="save-update">
+			<key column="unitId" />
+			<many-to-many class="com.common.value.Member" column="memberId" />
+		</set>
+	</class>
+	
+	
+	<class name="com.common.value.Member" table="COM_Member" dynamic-update="true" select-before-update="true">
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="name" type="string" length="30" not-null="true" />
+		<property name="sname" type="string" length="30" not-null="true" />
+		<property name="officePhone" type="string" length="30" />
+		<property name="cellphone" type="string" length="30" not-null="true" />
+		<property name="password" type="string" length="30" not-null="true" />
+		<property name="email" type="string" />		
+		<many-to-one name="signfile" class="com.base.value.UploadedFile" cascade="all" />
+		<set name="groups" table="COM_MemberGroup" cascade="save-update">
+			<key column="memberId" />
+			<many-to-many class="com.base.value.Group" column="groupId" />
+		</set>
+		<set name="units" table="COM_MemberUnit" cascade="save-update">
+			<key column="memberId" />
+			<many-to-many class="com.common.value.Unit" column="unitId" />
+		</set>
+		<property name="lastModifiedDate" type="timestamp" />
+		<property name="createdDate" type="timestamp" insert="true" update="false" />
+		
+	</class>
+</hibernate-mapping>

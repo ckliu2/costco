@@ -1,0 +1,20 @@
+.sc_store_searchBoxLeft {
+    float: left;
+}
+
+.sc_store_searchBoxRight {
+    float: right;
+}
+
+.sc_store_searchBox {
+    position: relative;
+    right: 0;
+    height: 20px;
+    width: 320px;
+    padding-left: 60px;
+    padding-top: 30px;
+}
+
+.sc_store_searchBoxInput {
+    width: 250px;
+}

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+   <!-- 
+    ************************ 
+    * 相館
+    ************************
+   -->   
+   <class name="com.photo.value.Shop" table="Photo_Shop">
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+       <generator class="identity"/>
+    </id>
+    <property name="name" type="string" length="50" not-null="true"/>  
+    <property name="address" type="string" length="100" not-null="true"/> 
+    <property name="contact" type="string" length="30" not-null="true"/>  
+    <property name="title" type="string" length="30" not-null="true"/>  
+    <property name="phone" type="string" length="30" not-null="true"/>
+    <property name="ip" type="string" length="30" not-null="true"/>
+    <property name="mac" type="string" length="30" not-null="true"/>
+    <property name="beginDate" type="date" />
+    <property name="endDate" type="date" />    
+    <property name="lastModifiedDate" type="timestamp" />
+	<property name="createdDate" type="timestamp" insert="true"	update="false" />		
+  </class>
+    
+   <!-- 
+    ************************ 
+    * 客戶
+    ************************
+   -->   
+  <class name="com.photo.value.Customer" table="Photo_Customer">
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+      <generator class="identity"/>
+    </id>
+    <property name="name" type="string" length="10" not-null="true"/>   
+    <property name="cellphone" type="string" length="30" not-null="true"/> 
+    <property name="email" type="string" length="50" not-null="true"/> 
+    <property name="lastModifiedDate" type="timestamp" />
+	<property name="createdDate" type="timestamp" insert="true"	update="false" />		
+  </class>
+  
+  
+   <!-- 
+    ************************ 
+    * 訂單
+    ************************
+   -->   
+  <class name="com.photo.value.Bill" table="Photo_Bill" >
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+       <generator class="identity"/>
+    </id>
+    <property name="no" type="string" />
+    <property name="thumbnail" type="string" />
+    <many-to-one name="customer" class="com.photo.value.Customer" cascade="none" not-null="true" />
+    <many-to-one name="product" class="com.photo.value.Product" cascade="none" not-null="true" />
+    <property name="complete" type="boolean" />
+    <property name="note" type="boolean" />
+    <property name="noteTime" type="timestamp" />
+    <property name="lastModifiedDate" type="timestamp" />
+	<property name="createdDate" type="timestamp" insert="true"	update="false" />		
+  </class>
+  
+   <!-- 
+    ************************ 
+    * 照片
+    ************************
+   -->   
+  <class name="com.photo.value.Picture" table="Photo_Picture">
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+       <generator class="identity"/>
+    </id>
+    <property name="sn" type="integer" />
+    <property name="rename" type="string" />
+    <property name="fs" type="string" />
+    <many-to-one name="size" class="com.photo.value.Size" cascade="none" not-null="true" />
+    <property name="copies" type="integer" not-null="true"/>
+    <many-to-one name="sty" class="com.photo.value.Stytle" cascade="none" not-null="true" />
+    <many-to-one name="bill" class="com.photo.value.Bill" cascade="none" not-null="true" />
+    <property name="lastModifiedDate" type="timestamp" />
+    <property name="createdDate" type="timestamp" insert="true"	update="false" />		
+  </class>
+  
+  
+  <!-- 
+    ************************ 
+    * 產品
+    ************************
+   -->   
+  <class name="com.photo.value.Product" table="Photo_Product">
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+       <generator class="identity"/>
+    </id>
+    <property name="name" type="string" length="30" not-null="true"/>  
+    <property name="seqNo" type="integer" not-null="true"/>
+    <property name="num" type="integer" not-null="true"/>
+    <property name="status" type="boolean" />
+    <many-to-one name="attachment"		class="com.base.value.UploadedFile"	column="attachment"	cascade="all" /> 
+  </class>
+  
+  
+  <!-- 
+    ************************ 
+    * 尺寸
+    ************************
+   -->   
+  <class name="com.photo.value.Size" table="Photo_Size">
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+       <generator class="identity"/>
+    </id>
+    <property name="width" type="integer" not-null="true"/>  
+    <property name="height" type="integer" not-null="true"/>
+    <list name="products" cascade="none" lazy="false" table="Photo_ProductSize">
+      <meta attribute="widget">two-list</meta>
+      <key column="sizeId"/>
+      <index column="idx"/>
+      <many-to-many class="com.photo.value.Product" column="productId"/>
+    </list>
+  </class>
+  
+  <!-- 
+    ************************ 
+    * 樣式
+    ************************
+   -->   
+  <class name="com.photo.value.Stytle" table="Photo_Stytle">
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+       <generator class="identity"/>
+    </id>
+    <property name="name" type="string" not-null="true"/>  
+    <list name="products" cascade="none" lazy="false" table="Photo_ProductStytle">
+      <meta attribute="widget">two-list</meta>
+      <key column="stytleId"/>
+      <index column="idx"/>
+      <many-to-many class="com.photo.value.Product" column="productId"/>
+    </list>
+  </class>
+  
+  
+  <!-- 
+    ************************ 
+    * 價格
+    ************************
+   -->   
+  <class name="com.photo.value.Price" table="Photo_Price">
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+       <generator class="identity"/>
+    </id>
+    <property name="price" type="integer" not-null="true"/>
+    <many-to-one name="product" class="com.photo.value.Product" cascade="all" /> 
+    <many-to-one name="size" class="com.photo.value.Size" cascade="all" /> 
+  </class>
+  
+  
+  <!-- 
+    ************************ 
+    * 訂單明細
+    ************************
+   -->   
+  <class name="com.photo.value.BillInfo" table="Photo_BillInfo">
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+       <generator class="identity"/>
+    </id>
+    <many-to-one name="bill" class="com.photo.value.Bill" cascade="all" /> 
+    <many-to-one name="size" class="com.photo.value.Size" cascade="all" /> 
+    <property name="num" type="integer" not-null="true"/>
+    <property name="price" type="integer" not-null="true"/>
+    <property name="sumprice" type="integer" not-null="true"/>       
+  </class>
+  
+  
+	     
+</hibernate-mapping>

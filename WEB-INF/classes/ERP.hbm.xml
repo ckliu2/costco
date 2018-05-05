@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.erp.value.Carousel" table="ERP_Carousel">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>		
+		<property name="seqNo" type="integer" not-null="true" />
+		<property name="name" type="string"   />
+		<property name="content" type="string" />
+		<property name="url" type="string" />
+		<many-to-one name="photo" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="type" class="com.base.value.AppProperty" />
+	</class>
+	
+	<class name="com.erp.value.Web" table="ERP_Web">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>	
+		<property name="home" type="text" />		
+	</class>
+
+	<class name="com.erp.value.ProductType" table="ERP_ProductType">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="name" type="string"   not-null="true" />
+		<property name="seqNo" type="integer" not-null="true" />
+	</class>
+	
+	<class name="com.erp.value.Product" table="ERP_Product">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>		
+			
+		<list name="types" cascade="none" lazy="false" table="ERP_Types">
+			<meta attribute="widget">none</meta>
+			<key column="productId" />
+			<index column="idx" />
+			<many-to-many class="com.erp.value.ProductType" column="productTypeId" />
+		</list>
+		
+		<property name="no" type="string"   not-null="true" />
+		<property name="name" type="string" not-null="true"/>
+		<property name="description" type="text"  />
+		<property name="overview" type="text" />
+		<property name="specification" type="text"  />
+		<property name="seqNo" type="integer" not-null="true" />
+		
+		<!-- logo -->
+		<many-to-one name="logo1" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo2" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo3" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo4" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo5" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo6" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo7" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo8" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo9" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo10" class="com.base.value.UploadedFile" cascade="all" />
+		
+		<many-to-one name="logo11" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo12" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo13" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo14" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo15" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="logo16" class="com.base.value.UploadedFile" cascade="all" />
+		
+		
+		
+		<!-- productPhoto1 -->
+		<many-to-one name="productPhoto1" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="productPhoto2" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="productPhoto3" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="productPhoto4" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="productPhoto5" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="productPhoto6" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="productPhoto7" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="productPhoto8" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="productPhoto9" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="productPhoto10" class="com.base.value.UploadedFile" cascade="all" />
+		
+		<!-- downloads -->
+		<many-to-one name="download1" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="download2" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="download3" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="download4" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="download5" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="download6" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="download7" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="download8" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="download9" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="download10" class="com.base.value.UploadedFile" cascade="all" />
+		
+		<!-- diagrams -->
+		<many-to-one name="diagram1" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="diagram2" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="diagram3" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="diagram4" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="diagram5" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="diagram6" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="diagram7" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="diagram8" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="diagram9" class="com.base.value.UploadedFile" cascade="all" />
+		<many-to-one name="diagram10" class="com.base.value.UploadedFile" cascade="all" />
+		
+		<!-- link -->
+		<property name="link1" type="string"  />
+		<property name="linkName1" type="string"  />
+		<many-to-one name="target1" class="com.base.value.AppProperty" />
+		
+		<property name="link2" type="string"  />
+		<property name="linkName2" type="string"  />
+		<many-to-one name="target2" class="com.base.value.AppProperty" />
+		
+		<property name="link3" type="string"  />
+		<property name="linkName3" type="string"  />
+		<many-to-one name="target3" class="com.base.value.AppProperty" />
+		
+		<property name="link4" type="string"  />
+		<property name="linkName4" type="string"  />
+		<many-to-one name="target4" class="com.base.value.AppProperty" />
+		
+		<property name="link5" type="string"  />
+		<property name="linkName5" type="string"  />
+		<many-to-one name="target5" class="com.base.value.AppProperty" />
+		
+		<property name="link6" type="string"  />
+		<property name="linkName6" type="string"  />
+		<many-to-one name="target6" class="com.base.value.AppProperty" />
+		
+		<property name="link7" type="string"  />
+		<property name="linkName7" type="string"  />
+		<many-to-one name="target7" class="com.base.value.AppProperty" />
+		
+		<property name="link8" type="string"  />
+		<property name="linkName8" type="string"  />
+		<many-to-one name="target8" class="com.base.value.AppProperty" />
+		
+		<property name="link9" type="string"  />
+		<property name="linkName9" type="string"  />
+		<many-to-one name="target9" class="com.base.value.AppProperty" />
+		
+		<property name="link10" type="string"  />
+		<property name="linkName10" type="string"  />
+		<many-to-one name="target10" class="com.base.value.AppProperty" />
+		
+		<property name="link11" type="string"  />
+		<property name="linkName11" type="string"  />
+		<many-to-one name="target11" class="com.base.value.AppProperty" />
+		
+		<property name="link12" type="string"  />
+		<property name="linkName12" type="string"  />
+		<many-to-one name="target12" class="com.base.value.AppProperty" />
+		
+		<property name="link13" type="string"  />
+		<property name="linkName13" type="string"  />
+		<many-to-one name="target13" class="com.base.value.AppProperty" />
+		
+		<property name="link14" type="string"  />
+		<property name="linkName14" type="string"  />
+		<many-to-one name="target14" class="com.base.value.AppProperty" />
+		
+		<property name="link15" type="string"  />
+		<property name="linkName15" type="string"  />
+		<many-to-one name="target15" class="com.base.value.AppProperty" />
+		
+		<property name="link16" type="string"  />
+		<property name="linkName16" type="string"  />
+		<many-to-one name="target16" class="com.base.value.AppProperty" />
+		
+		<property name="link17" type="string"  />
+		<property name="linkName17" type="string"  />
+		<many-to-one name="target17" class="com.base.value.AppProperty" />
+		
+		<property name="link18" type="string"  />
+		<property name="linkName18" type="string"  />
+		<many-to-one name="target18" class="com.base.value.AppProperty" />
+		
+		<property name="link19" type="string"  />
+		<property name="linkName19" type="string"  />
+		<many-to-one name="target19" class="com.base.value.AppProperty" />
+		
+		<property name="link20" type="string"  />
+		<property name="linkName20" type="string"  />
+		<many-to-one name="target20" class="com.base.value.AppProperty" />
+		
+		<property name="link21" type="string"  />
+		<property name="linkName21" type="string"  />
+		<many-to-one name="target21" class="com.base.value.AppProperty" />
+		
+		<property name="link22" type="string"  />
+		<property name="linkName22" type="string"  />
+		<many-to-one name="target22" class="com.base.value.AppProperty" />
+		
+		<property name="link23" type="string"  />
+		<property name="linkName23" type="string"  />
+		<many-to-one name="target23" class="com.base.value.AppProperty" />
+		
+		<property name="link24" type="string"  />
+		<property name="linkName24" type="string"  />
+		<many-to-one name="target24" class="com.base.value.AppProperty" />
+		
+		<property name="link25" type="string"  />
+		<property name="linkName25" type="string"  />
+		<many-to-one name="target25" class="com.base.value.AppProperty" />
+		
+		<property name="link26" type="string"  />
+		<property name="linkName26" type="string"  />
+		<many-to-one name="target26" class="com.base.value.AppProperty" />
+		
+		<property name="link27" type="string"  />
+		<property name="linkName27" type="string"  />
+		<many-to-one name="target27" class="com.base.value.AppProperty" />
+		
+		<property name="link28" type="string"  />
+		<property name="linkName28" type="string"  />
+		<many-to-one name="target28" class="com.base.value.AppProperty" />
+		
+		<property name="link29" type="string"  />
+		<property name="linkName29" type="string"  />
+		<many-to-one name="target29" class="com.base.value.AppProperty" />
+		
+		<property name="link30" type="string"  />
+		<property name="linkName30" type="string"  />
+		<many-to-one name="target30" class="com.base.value.AppProperty" />
+		
+		<property name="disabled" type="boolean" column="disabled" />
+		
+	</class>
+	
+	
+	
+	
+</hibernate-mapping>

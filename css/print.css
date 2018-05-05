@@ -1,0 +1,298 @@
+
+body {
+    padding-right: 0px;
+    padding-left: 0px;
+    font-size: 14px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    font-family: "標楷體", "Times New Roman", Times, serif
+    text-decoration: none; spacing: 0px 0px 0px 0px
+    text-align: center; 
+    color: #000000;
+    background: #ffffff;
+    margin: 0; 
+    padding: 0;
+}
+
+
+hr {
+    border-right: #999999 0px solid;
+    border-top: #999999 1px solid;
+    border-left: #999999 0px solid;
+    border-bottom: #999999 0px solid;
+    height: 0px
+}
+h1 {
+    display: inline;
+    font-size: 20px;
+    font-family: "tahoma", "verdana", "arial", "helvetica", "sans-serif"
+}
+h2 {
+    font-size: 17px;
+    line-height: 100%
+}
+a:active {
+    font-size: 12px;
+    color: #ff0000;
+    font-family: "arial", "helvetica", "sans-serif";
+}
+a:visited {
+    font-size: 12px;
+    color: #006699;
+    font-family: "arial", "helvetica", "sans-serif";
+    text-decoration: none
+}
+a:hover {
+    font-size: 12px;
+    color: #0000ff;
+    font-family: "arial", "helvetica", "sans-serif";
+}
+a:link {
+    font-size: 12px;
+    color: #006699;
+    font-family: "arial", "helvetica", "sans-serif";
+    text-decoration: none;
+}
+
+
+.oneColFixCtrHdr #container {
+    width: 640px;  
+    background: #FFFFFF;
+    margin: 0 auto; 
+    border: 1px solid #000000;
+    text-align: left; 
+}
+.oneColFixCtrHdr #header {
+    background: #ffffff; 
+    padding: 0 10px 0 0px;  
+}
+.oneColFixCtrHdr #header h1 {
+    margin: 0; 
+    padding: 0px 0; 
+}
+.oneColFixCtrHdr #mainContent {
+    padding: 0 20px; 
+    background: #FFFFFF;
+}
+.oneColFixCtrHdr #footer {
+    background:#DDDDDD;
+}
+.oneColFixCtrHdr #footer p {
+    margin: 0; 
+    padding: 10px 0; 
+}
+
+#examType td {
+    text-align:center;
+}
+
+legend {
+    font-size: 14px;
+}
+
+.cColumn0 {
+    BACKGROUND: #ffffff;
+}
+.cColumn1 {
+    BACKGROUND: #ffffff;
+}
+.cColumn2 {
+    BACKGROUND: #ffffff;
+}
+.cColumn3 {
+    BACKGROUND: #ffffff;
+}
+.cColumn4 {
+    BACKGROUND: #ffffff;
+}
+.cColumnH0 {
+    BACKGROUND: #ffffff;
+}
+.cColumnH1 {
+    BACKGROUND: #ffffff;
+}
+.cColumnH2 {
+    BACKGROUND: #ffffff;
+}
+.cColumnH3 {
+    BACKGROUND: #ffffff;
+}
+.cColumnH4 {
+    BACKGROUND: #ffffff;
+}
+.cHint {
+    color: #888888;
+    font-size:11px;
+}
+.cContentTable {
+    width: 597px;
+    background:#eeeeee;
+}
+
+.cInputCaption {
+    color: #000000;
+    width: 140px;
+    height:45px;
+    padding-left: 5px;
+    text-align:right;
+    background:#ffffff;
+    font-weight: normal;
+}
+
+.cInputColumn {
+    width:  490px;
+    height:45px;
+    color: #000000;
+    padding-left: 5px;
+    text-align:left;
+    background:#ffffff;
+}
+
+.cInputCaption2 {
+    color: #000000;
+    width: 150px;
+    height:22px;
+    padding-left: 5px;
+    text-align:right;
+    background:#ffffff;
+    font-weight: normal;
+}
+
+.cInputColumn2 {
+    width:  150px;
+    height:22px;
+    color: #000000;
+    padding-left: 5px;
+    text-align:left;
+    background:#ffffff;
+}
+
+.cInputCaption21 {
+    color: #000000;
+    width: 100px;
+    height:22px;
+    padding-left: 5px;
+    text-align:right;
+    background:#ffffff;
+    font-weight: normal;
+}
+
+.cInputColumn21 {
+    width:  197px;
+    height:22px;
+    color: #000000;
+    padding-left: 5px;
+    text-align:left;
+    background:#ffffff;
+}
+
+.cInputColumn3 {
+    width:  447px;
+    height:22px;
+    color: #000000;
+    padding-left: 5px;
+    text-align:left;
+    background:#ffffff;
+}
+
+.cActionButtonLine {
+    text-align:center;
+    background:#ffffff;
+    height:40px;
+}
+
+.cActionButtonLine input {
+    width: 60px;
+    height:25px;
+}
+
+.cNote {
+    background:#ffffff;
+    color:#0000ff;
+}
+
+input {
+    border:1px solid #CCCCFF;
+    height: 16px;
+    font-weight:normal;
+}
+
+.cInputTextFieldTiny {
+    width:60px;
+}
+
+.cInputTextFieldShort {
+    width:120px;
+}
+
+.cInputTextField {
+    width:200px;
+}
+
+.cInputTextFieldMedium {
+    width:300px;
+}
+
+.cInputTextFieldLong {
+    width:380px;
+}
+
+.cInputTextFieldLarge {
+    width:500px;
+}
+
+.cExamButton {
+    width:  230px;
+    height: 60px;
+}
+
+#examType td div {
+    height: 50px;
+    width: 160px;
+    margin: 5px;
+    text-align:center;
+    display: block;
+    border-width: 2px;
+    border-style: solid;
+    cursor:default;
+}
+
+.btnDefault {
+    color: #000000;
+    background-color: #e4e4ff;
+    border-bottom-color: #666666;
+    border-right-color: #888888;
+    border-left-color: #cccccc;
+    border-top-color: #eeeeee;
+}
+
+.btnActive {
+    color: #ffffaa;
+    background-color: #ccccee;
+    border-top-color: #666666;
+    border-left-color: #888888;
+    border-right-color: #cccccc;
+    border-bottom-color: #eeeeee;
+}
+
+.cActionStep {
+    background-color: #cccccc;
+    color: #ffffcc;
+}
+
+.NeverStep {
+    background-color: #cccccc;
+    color: #ffffcc;
+}
+
+#iRemind li {
+    font-size:14px;
+}
+
+.verticalText { 
+    writing-mode:tb-rl; 
+} 
+
+#line {
+    border:1px solid #000000;
+}

@@ -1,0 +1,1 @@
+<%@ page session = "false" %><%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %><%@ page contentType="text/html;charset=utf-8"%><%@ taglib uri="/webwork" prefix="ww" %><ww:set name="allowAll" value="%{careersAllowAll()}"/>${allow}

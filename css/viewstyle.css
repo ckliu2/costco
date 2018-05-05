@@ -1,0 +1,355 @@
+.cBody {
+    background: #EEEEEE;
+}
+
+.cContentTable {
+    border-collapse: collapse;
+    width: 100%;
+    height:100%;
+}
+
+.cInputCaption {
+    font-size:13px;
+    font-family: Sans-Serif;
+    color: #000000;
+    background: #CCCCCC;
+    width:      130px;
+    height:20px;
+    padding-left: 5px;
+}
+
+.cInputColumn {
+    font-size:13px;
+    color: #000000;
+    background: #EEEEEE;
+    padding-left: 5px;
+}
+
+.cInputTextFieldTiny {
+	border-width:1px;
+	border-style: inset;
+    font-size:13px;
+    width:60px;
+    height:17px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    background: #EEEEEE;
+}
+.cInputTextField {
+	border-width:1px;
+	border-style: inset;
+    font-size:13px;
+    width:200px;
+    height:17px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    background: #EEEEEE;
+}
+
+.cInputTextFieldShort {
+	border-width:1px;
+	border-style: inset;
+    font-size:13px;
+    width:120px;
+    height:17px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    background: #EEEEEE;
+}
+.cInputTextFieldLong {
+	border-width:1px;
+	border-style: inset;
+    font-size:13px;
+    width:400px;
+    height:17px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    background: #EEEEEE;
+}
+.cInputTextArea {
+	border-width:1px;
+	border-style: inset;
+    font-size:13px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    background: #EEEEEE;
+}
+
+.cPageLink {
+    BACKGROUND: none transparent scroll repeat 0% 0%;
+    COLOR: #FF0000;
+    TEXT-DECORATION: none
+}
+
+.cHead {
+    font-size: 24px;
+    color: #FFCC00;
+    background: #EEEEEE;
+}
+
+.cLabel {
+    font-size:13px;
+    color: #000000;
+    background: #EEEEEE;
+}
+
+.cLabel2 {
+    font-size:13px;
+    color: #000000;
+    background: #EEEEEE;
+}
+
+.cRightColumn {
+    font-size:13px;
+    font-style:'Times New Roman';
+    color: #000000;
+    height:600px;
+    background: #EEEEEE;
+}
+
+.cMenuItem {
+    color: #0000FF;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.cMenuItemLevel2 {
+    color: #0000FF;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.cMenuTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+.cUserName {
+    font-size: 13px;
+    font-color: #0000FF;
+}
+
+.cLogout {
+    font-size: 13px;
+    font-color: #0000FF;
+    align:right;
+}
+
+td.itemLevel1 {
+    color: #0000FF;
+    font-size: 13px;
+}
+td.cHello {
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
+A:link {
+    BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #0000FF; TEXT-DECORATION: none
+}
+A:visited {
+    BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #0000FF; TEXT-DECORATION: none
+}
+A:hover {
+    BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #FFAAAA; TEXT-DECORATION: none
+}
+A:active {
+    BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #FFAAAA; TEXT-DECORATION: none
+}
+
+.cTitle {
+    font-size:20px;
+    background: #AAAAAA;
+    color: #0000FF;
+    font-weight:bold;
+    height:43px;
+}
+
+.cInputCaptionLast {
+    font-size:13px;
+    color: #000000;
+    background: #FFFFDD;
+    width:      100px;
+    background: #EEEEEE;
+}
+
+.cInputColumnLast {
+    font-size:13px;
+    color: #000000;
+    background: #FFFFDD;
+    background: #EEEEEE;
+}
+
+.cSearchBar {
+    font-size:13px;
+    color: #000000;
+    background: #FFFFCC;
+}
+
+
+.cRequired {
+    font-size:13px;
+    color: #FF0000;
+}
+
+.cNote {
+    font-size:11px;
+    color: #990000;
+}
+
+
+.cContentTitle {
+    font-size:18px;
+    background: #AAAAAA;
+    color: #FFFF66;
+    font-weight:bold;
+    height:43px;
+}
+
+.cTitle {
+    font-size:13px;
+    height: 43px;
+    color:  #0033CC;
+    font-weight: bold;
+}
+
+.cSubContentTitle {
+    font-size:13px;
+    color:  #FF0000;
+}
+
+.cInputListField {
+    border-width:1px;
+    border-style: inset;
+    font-size:13px;
+    width:200px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+}
+
+
+.cInputValidationError {
+    font-size:13px;
+    color: #FF0000;
+}
+.cSectionHead {
+  width: 100%;
+  height: 24px;
+  background: #E8E8E8;
+}
+.cSectionTitle {
+  color: #CC6600;
+  font-size:15px;
+}
+
+.cSubMenuHead {
+    background: #C3D9F9;
+    height: 32px;
+}
+
+.cSelectedmenuItem {
+    font-size:15px;
+    color: #CC6600;
+}
+
+.cSelectedSubMenuItem {
+    color: #CC6600;
+    cursor: hand;
+}
+
+.cUnselectedSubMenuItem {
+    color: #0000FF;
+    cursor: hand;
+}
+
+.cUnselectedSubMenuItemWithoutAnchor {
+    color: #00CCFF;
+}
+
+.cHyperLink {
+    font-size:13px;
+    BACKGROUND: none transparent scroll repeat 0% 0%;
+    COLOR: #0000FF;
+    TEXT-DECORATION: none
+}
+
+
+.cAutoInputTextFieldShort {
+    font-size:13px;
+    width:60px;
+    height:17px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    BACKGROUND: #EEEEEE;
+}
+.cInputTextFieldReadOnly {
+    font-size:13px;
+    width:80px;
+    height:17px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    BACKGROUND: #EEEEEE;
+}
+
+.cInputTextFieldShortReadOnly {
+    font-size:13px;
+    width:60px;
+    height:17px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    BACKGROUND: #EEEEEE;
+}
+
+.cSelectButton {
+    width:40px;
+}
+
+.cQueryFieldList {
+    font-size:13px;
+    width:120px;
+}
+
+.cQueryFieldList2 {
+    font-size:13px;
+    width:160px;
+}
+
+.cQuerySectionHead {
+  width: 100%;
+  height: 20px;
+  color: #000000;
+  background: #FFFFCC;
+}
+
+.cHelp {
+    font-size:13px;
+    color: #0000FF;
+    background: #FFFFFF;
+}
+.cButton {
+    border-style: outset;
+    border-width: 1px;
+    font-size:13px;
+    background: #EEDDEE;
+    height: 25px;
+}
+.cOpenWindowButton {
+    border-style: outset;
+    border-width: 1px;
+    font-size:11px;
+    background: #FFFFDD;
+    height: 16px;  
+}
+.cActionButton {
+    border-style: outset;
+    border-width: 1px;
+    font-size:11px;
+    background: #FFFFDD;
+    height: 16px;     
+}
+
+.cRightColumnHead1 {
+    font-size:12px;
+    background: #EEEEEE;
+    height: 25px;  
+
+}

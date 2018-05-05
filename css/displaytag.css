@@ -1,0 +1,303 @@
+div.pagelinks {
+    background-color: transparent;
+    color: #a90a08;
+    font-size:14px;
+    font-weight: normal;
+    text-decoration: none;
+    font-family:arial,sans-serif;
+}
+
+div.pagelinks a:visited, div.pagelinks a:hover, div.pagelinks a:link, div.pagelinks a:active  {
+    background-color: transparent;
+    color: #0000FF;
+    text-decoration: underline;
+    font-size:14px;
+}
+
+span.pagebanner {
+    display: block;
+    margin: 0px 0px 0px 0px;
+    padding: 2px 4px 2px 0px;
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+}
+
+span.pagelinks {
+    display: block;
+    font-size: 14px;
+}
+
+table.list {
+    border: 1px solid #808080;
+    border-collapse: collapse;
+    background: white;
+}
+
+table.list td {
+    font-size: 14px;
+    padding-left: 3px;
+    text-align: left;
+    border-bottom: 1px dashed #C0C0C0;
+    white-space:nowrap;
+
+}
+
+table.list th {
+    font-size: 14px;
+    background-color: #CCCCFF;
+    padding: 2px;
+    padding-left: 3px;
+    border-bottom: 1px solid #C0C0C0;
+    text-align: center;
+    color: #000000;
+    font-weight: normal;
+     white-space:nowrap;
+}
+
+/* The following 3 rules are for Tapestry's contrib:Table */
+table.list th table {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+table.list th table td {
+    font-size: 14px;
+    text-align: left;
+}
+
+table.list th table td:hover, table.list th table td a:hover {
+    background-color: #ffd;
+}
+
+table.list th table tr:hover {
+    background-color: #ffd;
+    border: 1px solid white;
+}
+
+
+table.list th a, table.list th a:visited {
+    background-color: transparent;
+    color: #000000;
+    text-decoration: none;
+    font-size:14px;
+}
+
+th.sorted a, th.sortable a {
+    background-position: right;
+    display: block;
+    padding: 0px 3px;
+    font-size:14px;
+}
+
+table.list th.order1 a {
+    background-image: url(/sjca/images/arrow_down.png) !important;
+}
+
+table.list th.order2 a {
+    background-image: url(/sjca/images/arrow_up.png) !important;
+}
+
+table.list th.sortable a {
+    background-image: url(/sjca/images/arrow_off.png);
+}
+
+table.list th.sorted {
+    background-color: #CCCCFF;
+    color: #000000;
+}
+
+table.list th.sorted a, table.list th.sortable a {
+    background-position: right;
+    background-repeat: no-repeat;
+    display: block;
+    font-size:14px;
+}
+
+table.list th.sortable:hover {
+    background-color: #ffd;
+}
+
+table.list thead tr {
+    background-color: #FFCC00;
+}
+
+table.list tr.total {
+    background: #AAFFFF;
+    border-top: 1px solid silver;
+}
+
+table.list tr.even {
+    background: #FFFFFF;
+    border-top: 1px solid #C0C0C0;
+    color: #000000;
+}
+
+table.list tr.odd {
+    background: #FFFFFF;
+    border-top: 1px solid #C0C0C0;
+    color: #000000;
+}
+
+/* highlight table row onmouseover */
+table.list tr:hover, table.list tr.over {
+    background: #FFFFCC;
+    border-bottom: 1px solid #C0C0C0;
+    border-top: 1px solid #C0C0C0;
+    color: #000000;
+    cursor: default;
+    /*cursor: hand; *//* IE 5.5 non-compliant workaround */
+}
+
+/* Labels for validation and label tag */
+label {
+    font-weight: normal;
+    cursor: default;
+    /*cursor: hand;*/
+}
+
+label.required {
+    font-weight: bold;
+}
+
+label.error {
+    font-weight: bold;
+    background: transparent;
+    color: red;
+}
+
+/* These are the styles for detail screen tables */
+table.detail {
+    margin-left: 10px;
+    padding: 5px;
+    font-weight: normal;
+}
+
+table.detail th {
+    text-align: right;
+    padding: 0px 3px 0px 0px;
+}
+
+/******************************************
+ * Two List
+ ******************************************/
+table.twoList {
+    width: 100%;
+    border: 1px solid #808080;
+    border-collapse: collapse;
+    background: white;
+}
+
+table.twoList td {
+    font-size: 14px;
+    padding-left: 3px;
+    text-align: center;
+    border-bottom: 1px dashed #C0C0C0;
+}
+
+table.twoList th {
+    font-size: 14px;
+    background-color: #CCCCFF;
+    padding: 2px;
+    padding-left: 3px;
+    border-bottom: 1px solid #C0C0C0;
+    text-align: center;
+    color: #000000;
+    font-weight: normal;
+}
+
+/* The following 3 rules are for Tapestry's contrib:Table */
+table.twoList th table {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+table.twoList th table td {
+    font-size: 14px;
+    text-align: left;
+}
+
+table.twoList th table td:hover, table.twoList th table td a:hover {
+    background-color: #ffd;
+}
+
+table.twoList th table tr:hover {
+    background-color: #ffd;
+    border: 1px solid white;
+}
+
+
+table.twoList th a, table.twoList th a:visited {
+    background-color: transparent;
+    color: #000000;
+    text-decoration: none;
+    font-size:14px;
+}
+
+table.twoList th.order1 a {
+    background-image: url(/sjca/images/arrow_down.png) !important;
+}
+
+table.twoList th.order2 a {
+    background-image: url(/sjca/images/arrow_up.png) !important;
+}
+
+table.twoList th.sortable a {
+    background-image: url(/sjca/images/arrow_off.png);
+}
+
+table.twoList th.sorted {
+    background-color: #CCCCFF;
+    color: #000000;
+}
+
+table.twoList th.sorted a, table.twoList th.sortable a {
+    background-position: right;
+    background-repeat: no-repeat;
+    display: block;
+    font-size:14px;
+}
+
+table.twoList th.sortable:hover {
+    background-color: #ffd;
+}
+
+table.twoList thead tr {
+    background-color: #FFCC00;
+}
+
+table.twoList tr.total {
+    background: #AAFFFF;
+    border-top: 1px solid silver;
+}
+
+table.twoList tr.even {
+    background: #FFFFFF;
+    border-top: 1px solid #C0C0C0;
+    border-bottom: 1px solid #C0C0C0;
+    color: #000000;
+}
+
+table.twoList tr.odd {
+    background: #FFFFFF;
+    border-top: 1px solid #C0C0C0;
+    border-bottom: 1px solid #C0C0C0;
+    color: #000000;
+}
+
+/* highlight table row onmouseover */
+table.twoList tr:hover, table.twoList tr.over {
+    background: #FFFFCC;
+    border-bottom: 1px solid #C0C0C0;
+    border-top: 1px solid #C0C0C0;
+    color: #000000;
+    cursor: default;
+    /*cursor: hand; *//* IE 5.5 non-compliant workaround */
+}
+
+
+
+
+

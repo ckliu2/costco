@@ -1,0 +1,1 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%><%@ taglib uri="/webwork" prefix="ww" %><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><ww:set name="ls" value="%{check()}"/><c:out value="${ls}" escapeXml="false"/>

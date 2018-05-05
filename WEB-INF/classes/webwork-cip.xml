@@ -1,0 +1,82 @@
+<!DOCTYPE xwork PUBLIC
+    "-//OpenSymphony Group//XWork 1.1.1//EN"
+    "http://www.opensymphony.com/xwork/xwork-1.1.1.dtd">
+
+<xwork>
+    <package name="cip" extends="webwork-default" >
+    
+    <interceptors>
+			<interceptor-stack name="defaultStack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servlet-config" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="model-driven" />
+				<interceptor-ref name="fileUpload" />
+				<interceptor-ref name="static-params" />
+				<interceptor-ref name="params" />
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">execute,delete,edit,edit1,list,list1,copy,cancel,login,saveCombinationQuotedPrice,saveAssemblyQuotedPrice,save1,save2,save3</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">input,back</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<global-results>
+			<result name="dataAccessFailure" type="tiles">dataAccessFailure 
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="org.springframework.dao.DataAccessException" result="dataAccessFailure" />
+		</global-exception-mappings>
+		
+		<!-- holiday -->
+        <action name="holidayList" class="holidayAction" method="list">
+            <result name="success" type="tiles">holidayList</result>          
+        </action>
+        
+        <action name="editHoliday" class="holidayAction" method="list">
+            <result name="success">/cip/editHoliday.jsp</result>          
+        </action>
+        
+        <action name="saveHolidayJSON" class="holidayAction" method="list">
+            <result name="success">/cip/saveHolidayJSON.jsp</result>          
+        </action>
+        
+        <action name="delHolidayJSON" class="holidayAction" method="list">
+            <result name="success">/cip/delHolidayJSON.jsp</result>          
+        </action>
+        
+        <action name="holidayJSON" class="holidayAction" method="list">
+            <result name="success" >/cip/holidayJSON.jsp</result>          
+        </action>
+        
+        <!-- missions -->
+        <action name="missions" class="missionsAction" method="list">
+            <result name="success" type="tiles">missions</result>          
+        </action>
+        
+        <action name="missionsIPCheckJSON" class="missionsAction" method="list">
+            <result name="success">/cip/missionsIPCheckJSON.jsp</result>          
+        </action>
+        
+        <action name="missionsSignInJSON" class="missionsAction" method="list">
+            <result name="success">/cip/missionsSignInJSON.jsp</result>          
+        </action>
+        
+        <action name="missionsSignOutJSON" class="missionsAction" method="list">
+            <result name="success">/cip/missionsSignOutJSON.jsp</result>          
+        </action>
+        
+        <action name="missionsByMemberJSON" class="missionsAction" method="list">
+            <result name="success">/cip/missionsByMemberJSON.jsp</result>          
+        </action>
+        
+   
+    </package>
+</xwork>

@@ -1,0 +1,306 @@
+<!DOCTYPE xwork PUBLIC
+    "-//OpenSymphony Group//XWork 1.1.1//EN"
+    "http://www.opensymphony.com/xwork/xwork-1.1.1.dtd">
+<xwork>
+	<include file="webwork-default.xml" />
+	<package name="default" extends="webwork-default">
+		<interceptors>
+			<interceptor-stack name="defaultStack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servlet-config" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="model-driven" />
+				<interceptor-ref name="fileUpload" />
+				<interceptor-ref name="static-params" />
+				<interceptor-ref name="params" />
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">execute,delete,edit,edit1,list,list1,copy,cancel,login,saveCombinationQuotedPrice,saveAssemblyQuotedPrice,save1,save2,save3</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">input,back</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="dataAccessFailure" type="tiles">dataAccessFailure 
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="org.springframework.dao.DataAccessException" result="dataAccessFailure" />
+		</global-exception-mappings>
+
+		<!-- Login -->
+		<action name="login" class="loginAction">
+			<result name="input" type="redirect">admin.jsp${xworkParam}</result>
+			<result name="success" type="tiles">userIndex</result>
+		</action>
+		<action name="logout" class="loginAction" method="logout">
+			<result name="success" type="redirect">admin.jsp</result>
+			<result name="input" type="redirect">admin.jsp</result>
+		</action>
+		<action name="userIndex" class="memberAction" method="list">
+			<result name="success" type="tiles">userIndex</result>
+		</action>
+		
+
+
+		<!-- AppProperty -->
+		<action name="appPropertyList" class="appPropertyAction" method="list">
+			<result name="success" type="tiles">appPropertyList</result>
+			<result name="input" type="tiles">appPropertyList</result>
+		</action>
+		<action name="editAppProperty" class="appPropertyAction" method="edit">
+			<result name="success" type="tiles">appPropertyForm</result>
+			<result name="input" type="tiles">appPropertyList</result>
+		</action>
+		<action name="saveAppProperty" class="appPropertyAction">
+			<result name="delete" type="redirect">appPropertyList.do</result>
+			<result name="input" type="tiles">appPropertyForm</result>
+			<result name="success" type="chain">saveAppPropertyWithValidation 
+			</result>
+		</action>
+		<action name="saveAppPropertyWithValidation" class="appPropertyAction" method="save">
+			<result name="input" type="tiles">appPropertyForm</result>
+			<result name="success">/common/backback.jsp</result>
+		</action>
+
+		<!-- MiscCode -->
+		<action name="miscCodeList" class="miscCodeAction" method="list">
+			<result name="success" type="tiles">miscCodeList</result>
+			<result name="input" type="tiles">miscCodeList</result>
+		</action>
+		<action name="editMiscCode" class="miscCodeAction" method="edit">
+			<result name="success" type="tiles">miscCodeForm</result>
+			<result name="input" type="tiles">miscCodeList</result>
+		</action>
+		<action name="saveMiscCode" class="miscCodeAction">
+			<result name="delete" type="redirect">miscCodeList.do</result>
+			<result name="input" type="tiles">miscCodeForm</result>
+			<result name="success" type="chain">saveMiscCodeWithValidation 
+			</result>
+		</action>
+		<action name="saveMiscCodeWithValidation" class="miscCodeAction" method="save">
+			<result name="input" type="tiles">miscCodeForm</result>
+			<result name="success">/common/backback.jsp</result>
+		</action>
+
+		<!-- Function -->
+		<action name="functionList" class="functionAction" method="list">
+			<result name="success" type="tiles">functionList</result>
+			<result name="input" type="tiles">functionList</result>
+		</action>
+		<action name="editFunction" class="functionAction" method="edit">
+			<result name="success" type="tiles">functionForm</result>
+			<result name="input" type="tiles">functionList</result>
+		</action>
+		<action name="saveFunction" class="functionAction">
+			<result name="delete" type="redirect">functionList.do</result>
+			<result name="input" type="tiles">functionForm</result>
+			<result name="success" type="chain">saveFunctionWithValidation 
+			</result>
+		</action>
+		<action name="saveFunctionWithValidation" class="functionAction" method="save">
+			<result name="input" type="tiles">functionForm</result>
+			<result name="success">/common/backback.jsp</result>
+		</action>
+
+		<!-- FunctionCategory -->
+		<action name="functionCategoryList" class="functionCategoryAction" method="list">
+			<result name="success" type="tiles">functionCategoryList</result>
+			<result name="input" type="tiles">functionCategoryList</result>
+		</action>
+		<action name="editFunctionCategory" class="functionCategoryAction" method="edit">
+			<result name="success" type="tiles">functionCategoryForm</result>
+			<result name="input" type="tiles">functionCategoryList</result>
+		</action>
+		<action name="saveFunctionCategory" class="functionCategoryAction">
+			<result name="delete" type="redirect">functionCategoryList.do</result>
+			<result name="input" type="tiles">functionCategoryForm</result>
+			<result name="success" type="chain">saveFunctionCategoryWithValidation 
+			</result>
+		</action>
+		<action name="saveFunctionCategoryWithValidation" class="functionCategoryAction" method="save">
+			<result name="input" type="tiles">functionCategoryForm</result>
+			<result name="success">/common/backback.jsp</result>
+		</action>
+
+		<!-- Group -->
+		<action name="groupList" class="groupAction" method="list">
+			<result name="success" type="tiles">groupList</result>
+			<result name="input" type="tiles">groupList</result>
+		</action>
+		<action name="editGroup" class="groupAction" method="edit">
+			<result name="success" type="tiles">groupForm</result>
+			<result name="input" type="tiles">groupList</result>
+		</action>
+		<action name="saveGroup" class="groupAction">
+			<result name="delete" type="redirect">groupList.do</result>
+			<result name="input" type="tiles">groupForm</result>
+			<result name="success" type="chain">saveGroupWithValidation</result>
+		</action>
+		<action name="saveGroupWithValidation" class="groupAction" method="save">
+			<result name="input" type="tiles">groupForm</result>
+			<result name="success">/common/backback.jsp</result>
+		</action>
+		<action name="groupListJSON" class="groupAction" method="list">
+			<result name="success">/adm/groupListJSON.jsp</result>
+		</action>
+		
+
+		<!-- Member -->
+		<action name="memberList" class="memberAction" method="list">
+			<result name="success" type="tiles">memberList</result>
+			<result name="input" type="tiles">memberList</result>
+		</action>
+		<action name="editMember" class="memberAction" method="edit">
+			<result name="success" type="tiles">memberForm</result>
+			<result name="input" type="tiles">memberList</result>
+		</action>
+		<action name="copyMember" class="memberAction" method="copy">
+			<result name="success" type="tiles">memberForm</result>
+			<result name="input" type="tiles">memberList</result>
+		</action>
+		<action name="saveMember" class="memberAction">
+			<result name="delete" type="redirect">memberList.do</result>
+			<result name="input" type="tiles">memberForm</result>
+			<result name="success" type="chain">saveMemberWithValidation</result>
+		</action>
+		<action name="saveMemberWithValidation" class="memberAction" method="save">
+			<result name="input" type="tiles">memberForm</result>
+			<result name="success" type="tiles">memberList</result>
+		</action>
+		<action name="memberListByGroupJSON" class="memberAction" method="list">
+			<result name="success">/adm/memberListByGroupJSON.jsp</result>
+		</action>
+		
+		
+		
+		<!-- ProductType -->
+        <action name="productTypeList" class="productTypeAction" method="list">
+            <result name="success" type="tiles">productTypeList</result>
+            <result name="input" type="tiles">productTypeList</result>
+        </action>
+
+        <action name="editProductType" class="productTypeAction" method="edit">
+            <result name="success" type="tiles">productTypeForm</result>
+            <result name="input" type="tiles">productTypeList</result>
+        </action>
+
+        <action name="copyProductType" class="productTypeAction" method="copy">
+            <result name="success" type="tiles">productTypeForm</result>
+            <result name="input" type="tiles">productTypeList</result>
+        </action>
+
+        <action name="saveProductType" class="productTypeAction">
+            <result name="delete" type="redirect">productTypeList.html</result>
+            <result name="input" type="tiles">productTypeForm</result>
+            <result name="success" type="chain">saveProductTypeWithValidation</result>
+        </action>
+
+        <action name="saveProductTypeWithValidation" class="productTypeAction" method="save">
+            <result name="input" type="tiles">productTypeForm</result>
+            <result name="success">/common/backback.jsp</result>
+        </action>
+
+    <!-- Product -->
+        <action name="productList" class="productAction" method="list">
+            <result name="success" type="tiles">productList</result>
+            <result name="input" type="tiles">productList</result>
+        </action>
+
+        <action name="editProduct" class="productAction" method="edit">
+            <result name="success" type="tiles">productForm</result>
+            <result name="input" type="tiles">productList</result>
+        </action>
+
+
+        <action name="saveProduct" class="productAction">
+            <result name="delete" type="redirect">productList.do</result>
+            <result name="input" type="tiles">productForm</result>
+            <result name="success" type="chain">saveProductWithValidation</result>
+        </action>
+
+        <action name="saveProductWithValidation" class="productAction" method="save">
+            <result name="input" type="tiles">productForm</result>
+            <!-- 
+            <result name="success" type="tiles">productList</result>
+             -->
+            <result name="success" type="redirect">editProduct.do${xworkParam}</result>
+        </action>
+		
+		
+	 <!-- web -->
+	 
+	    <action name="index" class="indexAction" method="list">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<action name="productCategory" class="indexAction" method="list">
+			<result name="success">/erp/productCategory.jsp</result>
+		</action>
+		
+		<action name="product" class="indexAction" method="list">
+			<result name="success">/erp/product.jsp</result>
+		</action>
+		
+		<action name="productSearch" class="indexAction" method="list">
+			<result name="success">/erp/productSearch.jsp</result>
+		</action>
+		
+		
+		<action name="sendMailJSON" class="indexAction" method="list">
+			<result name="success">/erp/sendMailJSON.jsp</result>
+		</action>
+		
+		
+		
+		<!-- Carousel -->
+        <action name="carouselList" class="carouselAction" method="list">
+            <result name="success" type="tiles">carouselList</result>
+            <result name="input" type="tiles">carouselList</result>
+        </action>
+
+        <action name="editCarousel" class="carouselAction" method="edit">
+            <result name="success" type="tiles">carouselForm</result>
+            <result name="input" type="tiles">carouselList</result>
+        </action>
+
+        <action name="copyCarousel" class="carouselAction" method="copy">
+            <result name="success" type="tiles">carouselForm</result>
+            <result name="input" type="tiles">carouselList</result>
+        </action>
+
+        <action name="saveCarousel" class="carouselAction">
+            <result name="delete" type="redirect">carouselList.do</result>
+            <result name="input" type="tiles">carouselForm</result>
+            <result name="success" type="chain">saveCarouselWithValidation</result>
+        </action>
+
+        <action name="saveCarouselWithValidation" class="carouselAction" method="save">
+            <result name="input" type="tiles">carouselForm</result>
+            <result name="success">/common/backback.jsp</result>
+        </action>
+		
+		<!-- Web -->
+		<action name="editWeb" class="webAction" method="edit">
+            <result name="success" type="tiles">webForm</result>            
+        </action>
+        
+         <action name="saveWeb" class="webAction">           
+            <result name="input" type="tiles">webForm</result>
+            <result name="success" type="chain">saveWebWithValidation</result>
+        </action>
+
+        <action name="saveWebWithValidation" class="webAction" method="save">
+            <result name="input" type="tiles">webForm</result>
+            <result name="success" type="redirect">editWeb.do${xworkParam}</result>
+        </action>
+
+		
+		
+	 </package>
+</xwork>

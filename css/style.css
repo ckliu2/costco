@@ -1,0 +1,728 @@
+.cBody {
+    background: #FFFFFF;
+}
+
+.cContentTable {
+    border-collapse: collapse;
+    width: 100%;  
+}
+
+.cContentTable1 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.cContentTable2 {
+    border-collapse: collapse;
+}
+
+
+.cInputCaption {
+    font-size:14px;
+    font-family: Sans-Serif;
+    color: #000000;
+/*    background: #F0F0F0; */
+    background: #FFFFCC;
+    width:      150px;
+    height:14px;
+    padding-left: 5px;
+}
+
+.cInputCaption_1 {
+    font-size:14px;
+    font-family: Sans-Serif;
+    color: #000000;
+/*    background: #F0F0F0; */
+    background: #FFFFCC;
+    width:      150px;
+    height:14px;
+    padding-left: 5px;
+}
+
+.cInputCaption_2 {
+    font-size:14px;
+    font-family: Sans-Serif;
+    color: #000000;
+    background: #66CC99;
+    width:      150px;
+    height:14px;
+    padding-left: 5px;
+}
+
+.cInputCaption_3 {
+    font-size:14px;
+    font-family: Sans-Serif;
+    color: #000000;
+    background: #FF99FF;
+    width:      150px;
+    height:14px;
+    padding-left: 5px;
+}
+
+.cInputCaption1 {
+    font-size:12px;
+    font-family: Sans-Serif;
+    color: #000000;
+    background: #FFFFCC;
+    width:      50%;
+    height:14px;
+    padding-left: 5px; 
+    word-break: keep-all;   
+    white-space:nowrap;
+    /*
+    border:1px dotted #000;width:100;height:25;
+    border:#E3DDFB; 
+    */     
+}
+
+.cInputCaption2 {
+    font-size:12px;
+    font-family: Sans-Serif;
+    color: #000000;
+    background: #E3DDFB;
+    width:      30%;
+    height:14px;
+    padding-left: 5px; 
+    word-break: keep-all;   
+    white-space:nowrap;
+}
+
+
+.showTimeBox {
+    font-size:9px;
+    font-family: Sans-Serif;    
+    width:      150px;
+    height:10px;
+    padding-left: 1px;
+}
+
+.cInputColumn {
+    font-size:14px;
+    color: #000000;
+    background: #FFFFFF;
+    padding-left: 5px;   
+}
+
+.cInputColumn2 {
+    font-size:12px;
+    color: #000000;
+    background: #FFFFFF;
+    padding-left: 5px;
+    width:400px;
+}
+
+.cDisplayImage {
+    color: #000000;
+    background: #FFFFFF;
+}
+
+.cDisplayImageCaption {
+    font-size:12px;
+    color: #000000;
+    background: #F0F0F0;
+    text-align:center;
+    width:250px;
+}
+
+.cDisplayImageContent {
+    font-size:12px;
+    border-width:1px;
+    border-style: solid;
+    border-color:#F0F0F0;
+    width:250px;
+    height:210px;
+    background: #FFFFFF;
+    text-align:center;
+}
+
+.cInputTextFieldTiny {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    width:60px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:#CCCCCC;
+}
+.cInputTextField {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    width:200px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:#CCCCCC;
+}
+
+.cInputTextFieldMedium {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    width:280px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:#CCCCCC;
+}
+
+.cInputTextFieldShort {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    width:120px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:#CCCCCC;
+}
+
+.cInputTextFieldShort1 {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    width:100px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:#CCCCCC;
+}
+
+.cInputTextFieldShort2 {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    width:30px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:#CCCCCC;
+}
+
+.cInputTextFieldLong {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    width:400px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:#CCCCCC;    
+}
+
+.cInputTextFieldLongRequired {
+    border-width:2px;
+    border-style: solid;
+    font-size:12px;
+    width:280px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:red;  
+}
+
+.cInputTextFieldShortRequired {
+    border-width:2px;
+    border-style: solid;
+    font-size:12px;
+    width:120px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:red;
+}
+
+.cInputTextFieldRequired {
+    border-width:2px;
+    border-style: solid;
+    font-size:12px;
+    width:200px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:red;
+}
+
+.cInputTextAreaRequired {
+    border-width:2px;
+    border-style: solid;
+    font-size:12px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:red;
+}
+
+.cInputColumnRequired {
+    font-size:14px;
+    color: #000000;
+    background: #FFFFFF;
+    padding-left: 5px; 
+    border: 1px solid black;
+    border-color:red;
+    border-width:2px;  
+}
+
+.cInputTextFieldLarge {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    width:600px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:#CCCCCC;
+}
+
+.cInputTextArea {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:#CCCCCC;
+}
+
+.cPageLink {
+    BACKGROUND: none transparent scroll repeat 0% 0%;
+    COLOR: #FF0000;
+    TEXT-DECORATION: none
+}
+
+.cHead {
+    font-size: 24px;
+    color: #FFCC00;
+}
+
+.cHead1 {
+    font-size: 24px;
+    color: #6633FF;
+    font-family:serif,sans-serif,cursive,fantasy,monospace;
+}
+
+.cLabelworktype1 {
+    font-size:14px;
+    color: #4233FB;
+    font-style: 'Times New Roman';
+    font-weight: bold;
+}
+
+.cLabelworktype2 {
+    font-size:14px;
+    color: #FD4120;
+}
+
+.cLabelworktype3 {
+    font-size:14px;
+    color: #76126F;
+}
+
+
+.cLabel {
+    font-size:14px;
+    color: #0000FF;
+}
+
+.cLabel2 {
+    font-size:14px;
+    color: #000000;
+}
+
+.cLabel3 {
+    font-size:12px;
+    color: #FFFFFF;
+}
+
+.cLabel4 {
+    font-size:14px;
+    color: #0000FF;
+}
+
+.cLabel5 {
+    font-size:14px;
+    color: red;
+}
+
+.cLabel6 {
+    font-size:12px;
+    color: #0000FF;
+    font-style:'Courier New';
+}
+
+.cLabel7 {
+    font-size:12px;
+    color: #CC6600;
+    font-style:'Courier New';   
+}
+
+.cLabel8 {
+    font-size:12px;
+    color: #333333;
+    font-style:'Courier New';
+}
+
+.tips {
+    font-size:10px;
+    color: #CC0000;
+    font-style:'Courier New';   
+}
+
+.cRightColumn {
+    font-size:12px;
+    font-style:'Times New Roman';
+    color: #000000;
+    height:600px;
+}
+
+
+
+
+.cMenuItem {
+    color: #0000FF;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.cMenuItemLevel2 {
+    color: #0000FF;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.cMenuTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+.cUserName {
+    font-size: 12px;
+    font-color: #0000FF;
+}
+
+.cLogout {
+    font-size: 12px;
+    font-color: #0000FF;
+    align:right;
+}
+
+td.itemLevel1 {
+    color: #0000FF;
+    font-size: 12px;
+}
+td.cHello {
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+.cMenuFrame {
+    color: #FFFFCC;
+    font-size: 12px;
+}
+
+.cTitle {
+    font-size:20px;
+    background: #DDE8E8;
+    color: #0000FF;
+    font-weight:bold;   
+}
+
+.cTitle1 {
+    font-size:20px;
+    background: #DDE8E8;
+    color: #0000FF;
+    font-weight:bold;   
+}
+
+.printTitle {
+    font-size:14pt; 
+    color: #0000FF;  
+    font-family: Sans-Serif;
+}
+
+.printContent {
+    font-size:12pt; 
+    color: #000000;  
+    font-family: Sans-Serif;  
+}
+
+.cInputCaptionLast {
+    font-size:12px;
+    color: #000000;
+    background: #FFFFDD;
+    width:      100px;
+}
+
+.cInputColumnLast {
+    font-size:12px;
+    color: #000000;
+    background: #FFFFDD;
+}
+
+.cSearchBar {
+    font-size:12px;
+    color: #000000;
+    background: #FFFFCC;
+}
+
+
+.cRequired {
+    font-size:12px;
+    color: #FF0000;
+}
+
+.memo-title {
+    font-size:12px;
+    color: block;
+}
+
+.memo-content {
+    font-size:12px;
+    color: blue;
+}
+
+.cNote {
+    font-size:11px;
+    color: #990000;
+}
+
+.cActionButtonLine {
+    /* background: #DDEEFF; */
+    background: #6697E3;
+    height:26px;
+    color:#FFFFFF;
+    font-size:12px;
+}
+
+.cTabPanelLine {
+    background: #FFFFFF;
+    height:52px;
+    font-size:12px;
+}
+
+.cSelectedTab {
+    border: 1px solid #FFFFFF;
+    /* background: #DDEEFF; */
+    background: #6697E3;
+    height:26px;
+    font-size:14px;
+    border-bottom: 1px solid #6697E3;
+    border-right: 1px solid #CCCCCC;
+    border-top: 1px solid #6697E3;
+    border-left: 1px solid #6697E3;
+    text-align:center;
+    color: #FFFFFF;
+}
+
+.cUnSelectedTab {
+    /* background: #EEFFFF; */
+    background: #DDEEFF;
+    height:26px;
+    font-size:14px;
+    border-bottom: 1px solid #EEFFFF;
+    border-right: 1px solid #FFFFFF;
+    text-align:center;
+}
+.cContentTitle {
+    font-size:16px;
+    color: #000000;
+    font-weight:bold;
+    height:39px;
+    background: #FFF url("../images/bar.gif") repeat-x;
+}
+
+.cTitle {
+    font-size:12px;
+    height: 43px;
+    color:  #0033CC;
+    font-weight: bold;
+}
+
+.cSubContentTitle {
+    font-size:12px;
+    color:  #FF0000;
+}
+
+
+.cInputListField {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+}
+
+.cInputValidationError {
+    font-size:12px;
+    color: #FF0000;
+}
+.cSectionHead {
+  width: 100%;
+  height: 20px;
+  background: #E8E8E8;
+}
+.cSectionTitle {
+  color: #CC6600;
+  font-size:15px;
+}
+
+.cSubMenuHead {
+    background: #C3D9F9;
+    height: 32px;
+}
+
+.cSelectedmenuItem {
+    font-size:15px;
+    color: #CC6600;
+}
+
+.cSelectedSubMenuItem {
+    color: #CC6600;
+    cursor: hand;
+}
+
+.cUnselectedSubMenuItem {
+    color: #0000FF;
+    cursor: hand;
+}
+
+.cUnselectedSubMenuItemWithoutAnchor {
+    color: #00CCFF;
+}
+
+.cHyperLink {
+    font-size:12px;
+    BACKGROUND: none transparent scroll repeat 0% 0%;
+    COLOR: #0000FF;
+    TEXT-DECORATION: none
+}
+
+
+.cAutoInputTextFieldShort {
+    font-size:12px;
+    width:60px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    BACKGROUND: #EEEEEE;
+    border-color:#CCCCCC;
+}
+.cInputTextFieldReadOnly {
+    font-size:12px;
+    width:80px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    BACKGROUND: #EEEEEE;
+    border-color:#CCCCCC;
+}
+
+.cInputTextFieldShortReadOnly {
+    font-size:12px;
+    width:60px;
+    height:14px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    BACKGROUND: #EEEEEE;
+    border-color:#CCCCCC;
+}
+
+.cSelectButton {
+    width:40px;
+    font-size:12px;
+    background: #EEEEEE;
+}
+
+.cQueryFieldList {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    width:200px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:#CCCCCC;
+}
+
+.cQueryFieldList2 {
+    border-width:1px;
+    border-style: solid;
+    font-size:12px;
+    width:400px;
+    font-weight:normal;
+    font-style:'Times New Roman';
+    border-color:#CCCCCC;
+}
+
+
+
+
+
+.cQuerySectionHead {
+  width: 100%;
+  height: 20px;
+  color: #000000;
+  background: #FFFFCC;
+}
+
+.cHelp {
+    font-size:12px;
+    color: #0000FF;
+    background: #FFFFFF;
+}
+.cButton {
+    border-style: outset;
+    border-width: 1px;
+    font-size:12px;
+    background: #EEEEEE;
+    height: 22px;
+}
+
+.cButton1 {
+    border-style: outset;
+    border-color: #006600;
+    border-width: 1px;
+    font-size:12px;
+    color:#006600;
+    background: #EEEEEE;
+    height: 22px;
+}
+
+.cOpenWindowButton {
+    border-style: outset;
+    border-width: 1px;
+    font-size:11px;
+    background: #CCCCCC;
+    height: 15px;  
+}
+.cActionButton {
+    border-style: outset;
+    border-width: 1px;
+    font-size:11px;
+    background: #CCCCCC;
+    height: 15px;     
+}
+
+.cRightColumnHead1 {
+    font-size:12px;
+    background: #CCCCCC;
+    height: 22px;  
+}
+.cLabelActionLine {
+    font-size:14px;
+    color: #FFFFFF;
+}
+.cPricingGrid {
+	height:300px;
+	width:600px;
+}
+
+.progress {
+    display: block;
+    text-align: center;
+    width: 0;
+    height: 3px;
+    background: red;
+    transition: width .3s;
+}
+
+.hidden_div:{
+    display:'none'
+  }

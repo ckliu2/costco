@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 差勤紀錄 -->
+	<class name="com.cip.value.Missions" table="CIP_Missions">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="member" class="com.common.value.Member" not-null="true" />
+		<property name="startDateTime" type="timestamp" />
+		<property name="endDateTime" type="timestamp" />
+		<property name="startDateTimeAbnormal" type="boolean" />
+		<property name="endDateTimeAbnormal" type="boolean" />
+		<property name="hours" type="java.lang.Double"/>
+		<property name="minutes" type="integer"/>
+		<property name="memo" type="string" />
+	</class>
+	
+	<!-- 國定假期 -->
+	<class name="com.cip.value.Holiday" table="CIP_Holiday">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>		
+		<property name="year" type="integer" not-null="true" />
+		<property name="name" type="string" />		
+		<property name="holiday" type="date" not-null="true"/>
+	</class>
+		
+</hibernate-mapping>

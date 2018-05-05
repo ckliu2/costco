@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ========================= OSWORKFLOW DEFINITIONS ========================= -->
+
+	<!-- Hibernate 3 WorkflowStore -->
+ 	<bean id="workflowStore" class="com.opensymphony.workflow.spi.hibernate3.SpringHibernateWorkflowStore">
+		<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+		<property name="propertySetDelegate">
+			<bean id="propertySetDelegate" class="com.tricision.maas.service.impl.DefaultHibernatePropertySetDelegate">
+				<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+			</bean>
+		</property>
+		<property name="cacheable"><value>true</value></property>
+	</bean>
+
+ 	<!-- Hibernate 3 WorkflowFactory -->
+ 	<bean id="workflowFactory" class="com.opensymphony.workflow.spi.hibernate3.SpringHibernateWorkflowFactory" init-method="init">
+		<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+		<property name="reload"><value>false</value></property>
+		<property name="validate"><value>true</value></property>
+	</bean>
+
+	<!-- Spring Type Resolver for dynamic wiring -->
+	<bean id="workflowTypeResolver" class="com.opensymphony.workflow.util.SpringTypeResolver">
+	    <!--
+	    Here you can inject custom resolver for business logic
+		<property name="conditions">
+	      <map>
+		    <entry key="beanshell">
+	        <value>mypackage.MyBeanShellCustomCondition</value></entry>
+		  </map>
+		</property>
+		-->
+    </bean>
+
+</beans>

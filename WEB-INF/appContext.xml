@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC
+          "-//SPRING//DTD BEAN//EN"
+          "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+   <!-- 
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="jdbc.properties"/>
+    </bean>
+    
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean> 
+   --> 
+   
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <property name="url" value="jdbc:sqlserver://140.129.140.58:1433;DatabaseName=wpc"/>
+        <property name="username" value="schuser"/>
+        <property name="password" value="davidjeff"/>
+    </bean> 
+    
+    
+     <bean id="txProxyTemplate" abstract="true"
+        class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="transactionManager"><ref bean="transactionManager"/></property>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="save*">PROPAGATION_REQUIRED</prop>
+                <prop key="remove*">PROPAGATION_REQUIRED</prop>
+                <prop key="update*">PROPAGATION_REQUIRED</prop>
+                <prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+            </props>
+        </property>
+    </bean>
+    
+    
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>  
+
+      
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>        
+        <property name="mappingResources">
+            <list>
+                <value>Common.hbm.xml</value>  
+                <value>WPC.hbm.xml</value> 	  
+                <value>POWER.hbm.xml</value>  
+            </list>
+        </property>       
+        <property name="hibernateProperties">
+            <props>                
+                <prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.connection.charSet">UTF-8</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>    
+
+<!-- ********************* DAO ************************ -->
+
+   <bean id="commonDAO" class="com.common.dao.hibernate.CommonDAOHibernate">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>  
+
+  
+    
+    <!-- 
+    ************************ 
+    * wpcDAO 
+    ************************
+    -->
+    <bean id="wpcDAO" class="tncc.wpc.dao.hibernate.wpcDAOHibernate">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+
+    
+
+<!-- ********************* Manager ************************ -->
+
+   <bean id="commonManager" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.common.service.impl.CommonManagerImpl">
+                <property name="commonDAO" ref="commonDAO"/>
+            </bean>
+        </property>
+    </bean>
+    
+
+
+    
+    <!-- 
+    ************************ 
+    * WPCManager
+    ************************
+    -->
+    <bean id="wpcManager" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="tncc.wpc.service.impl.wpcManagerImpl">
+                <property name="wpcDAO" ref="wpcDAO"/>
+            </bean>
+        </property>
+    </bean>
+    
+    
+
+    
+
+    
+
+</beans>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    
+   <!-- 
+    ************************ 
+    * 課程管理
+    ************************
+   -->   
+  <class name="com.city.value.Course" table="WEB_Course">
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+            <generator class="identity"/>
+    </id>
+    <property name="no" type="string" length="50" not-null="true"/>   
+    <property name="courseName" type="string" length="100" not-null="true"/> 
+    <property name="teacher" type="string" length="100" not-null="true"/> 
+    <property name="description" type="text"   />
+    <property name="registerBegin" type="date" not-null="true"/>
+	<property name="registerEnd" type="date" not-null="true"/>	
+	<property name="fee" type="string" length="50" /> 
+	<property name="note1" type="boolean"/>
+	<property name="note2" type="boolean"/>
+	<property name="note3" type="boolean"/>
+	<property name="note4" type="boolean"/>
+	<property name="noteDate1" type="date"/>
+	<property name="noteDate2" type="date"/>
+	<property name="noteDate3" type="date"/>
+	<property name="noteDate4" type="date"/>
+	<property name="times" type="string"  length="1000" />
+	  
+    <many-to-one name="coursefile"  class="com.base.value.UploadedFile" cascade="all" />    
+   
+    <list name="filegroups" cascade="none" lazy="false" table="WEB_CourseDownload">
+      <meta attribute="widget">two-list</meta>
+      <key column="courseId"/>
+      <index column="idx"/>
+      <many-to-many class="com.base.value.Group" column="groupId"/>
+    </list>         
+    <property name="lastModifiedDate" type="timestamp" />
+	<property name="createdDate" type="timestamp" insert="true"	update="false" />		
+  </class>
+  
+   <!-- 
+    ************************ 
+    * 會員課程記錄
+    ************************
+   -->   
+  <class name="com.city.value.CourseMember" table="WEB_CourseMember">
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+       <generator class="identity"/>
+    </id>
+    <many-to-one name="course"  class="com.city.value.Course" cascade="all" not-null="true"/>  
+    <property name="complete"  type="boolean"/>
+    <many-to-one name="member"  class="com.common.value.Member" cascade="all" not-null="true"/> 
+    <property name="attendlog" type="string"  length="1000" />
+    <property name="lastModifiedDate" type="timestamp" />
+    <property name="createdDate" type="timestamp" insert="true"	update="false" />    
+  </class>	
+  
+  
+   <!-- 
+    ************************ 
+    * 公告管理
+    ************************
+       
+  <class name="com.web.value.Bulletin" table="WEB_Bulletin">
+    <meta attribute="extends">BaseObject</meta>
+    <id name="id" column="id" unsaved-value="null">
+            <generator class="identity"/>
+     </id>
+    <property name="bulletinDate" type="date" not-null="true"/> 
+    <property name="subject" type="string" length="50" not-null="true"/>     
+    <property name="title" type="string" length="50" not-null="true"/>  
+    <property name="description" type="java.lang.String"  length="65535" />
+    <property name="placeDesc" type="string" length="100" />  
+    <property name="timeDesc" type="string" length="100" />
+    <property name="speaker" type="string" length="20" />
+    <property name="link" type="string" length="200" />
+    <property name="status"  type="boolean"/>  
+    <property name="facebook"  type="boolean"/>
+    <property name="twitter"  type="boolean"/> 
+    <property name="beginDate" type="date" not-null="true"/>
+	<property name="endDate" type="date" not-null="true"/>	
+	<property name="times" type="integer"/>	 
+    <property name="lastModifiedDate"  type="timestamp" not-null="true" />	 
+    <property name="createdDate"  type="timestamp" insert="true" update="false"  not-null="true" />	     
+    <many-to-one name="lastModifiedUser" class="com.common.value.Member" cascade="none" not-null="true" />
+    <many-to-one name="createdUser" class="com.common.value.Member" cascade="none" not-null="true" update="false"  /> 
+    <many-to-one name="bulletinType" class="com.base.value.AppProperty" cascade="none" not-null="true" />  
+    <many-to-one name="file"  class="com.base.value.UploadedFile" cascade="all" />
+    
+    <list name="groups" cascade="none" lazy="false" table="WEB_BulletinGroup">
+      <meta attribute="widget">two-list</meta>
+      <key column="bulletinId"/>
+      <index column="idx"/>
+      <many-to-many class="com.base.value.Group" column="groupId"/>
+    </list>
+    
+    <list name="members" cascade="none" lazy="false" table="WEB_BulletinMember">
+    	  <meta attribute="widget">two-list</meta>
+		  <key column="bulletinId" /> 
+		  <index column="idx" /> 
+          <composite-element class="com.web.value.BulletinMember">
+            <many-to-one name="member" class="com.common.value.Member" cascade="none" not-null="true" />
+            <property name="status"  type="boolean"/>  			 	
+   		  </composite-element>
+    </list>
+        
+  </class>
+  -->	     
+</hibernate-mapping>
