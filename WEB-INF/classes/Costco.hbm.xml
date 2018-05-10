@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!-- ************************* Store ************************ -->
+	<class name="com.costco.value.Store" table="Costco_Store">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="name" type="string" length="30" not-null="true" />
+		<property name="address" type="string" length="100" />
+		<property name="contact" type="string" length="30" />
+		<property name="title" type="string" length="30" />
+		<property name="phone" type="string" length="30"  />
+		<property name="lastModifiedDate" type="timestamp" />
+		<property name="createdDate" type="timestamp" insert="true" update="false" />
+	</class>
+	
+	
+	<!-- ************************* Billboard  ************************ -->
+	<class name="com.costco.value.Billboard" table="Costco_Billboard">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="no" type="integer" not-null="true"/>
+		<many-to-one name="size" class="com.base.value.AppProperty" not-null="true"/>
+		<many-to-one name="cover" class="com.base.value.UploadedFile" />
+		<many-to-one name="store" class="com.costco.value.Store" not-null="true" />
+	</class>
+	
+	 <!-- ************************* Vendor ************************ -->
+	<class name="com.costco.value.Vendor" table="Costco_Vendor">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="name" type="string" length="50" not-null="true" />
+		<property name="address" type="string" length="100" />
+		<property name="contact" type="string" length="30" />
+		<property name="title" type="string" length="30" />
+		<property name="phone" type="string" length="30"  />
+		<property name="lastModifiedDate" type="timestamp" />
+		<property name="createdDate" type="timestamp" insert="true" update="false" />		
+	</class>
+	
+	 <!-- ************************* Rent ************************ -->
+	<class name="com.costco.value.Rent" table="Costco_Rent">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="year" type="integer" not-null="true"/>
+		<many-to-one name="billboard" class="com.costco.value.Billboard" not-null="true" />
+		<many-to-one name="vendor" class="com.costco.value.Vendor" not-null="true" />
+		<many-to-one name="cover" class="com.base.value.UploadedFile" cascade="all"/>		
+		<property name="isUpToDate" type="boolean">
+          <column name="isUpToDate"  default="0" />
+        </property>  		
+		<property name="lastModifiedDate" type="timestamp" />
+		<many-to-one name="lastModifiedUser" class="com.common.value.Member"/>
+		<many-to-one name="createdUser" class="com.common.value.Member" not-null="true" insert="true" update="false" />
+		<property name="createdDate" type="timestamp" insert="true" update="false" />		
+	</class>
+	
+	
+</hibernate-mapping>

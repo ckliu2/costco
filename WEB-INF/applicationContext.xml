@@ -30,10 +30,10 @@
 	</bean>
 	
 	
-	 <bean id="ERPManager" parent="txProxyTemplate">
+	 <bean id="costcoManager" parent="txProxyTemplate">
         <property name="target">
-            <bean class="com.erp.service.impl.ERPManagerImpl">
-                <property name="genericDAO" ref="ERPDAO"/>
+            <bean class="com.costco.service.impl.CostcoManagerImpl">
+                <property name="genericDAO" ref="costcoDAO"/>
             </bean>
         </property>
     </bean>

@@ -15,7 +15,7 @@
         <property name="mappingResources">
             <list>
                 <value>Common.hbm.xml</value>   
-                <value>ERP.hbm.xml</value>   
+                <value>Costco.hbm.xml</value>   
             </list>
         </property>
         <property name="hibernateProperties">
@@ -36,7 +36,7 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
   
-    <bean id="ERPDAO" class="com.erp.dao.hibernate.ERPDAOHibernate">
+    <bean id="costcoDAO" class="com.costco.dao.hibernate.CostcoDAOHibernate">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
   

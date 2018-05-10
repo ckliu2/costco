@@ -110,66 +110,67 @@
 		<put name="content" value="/adm/memberForm.jsp" />
 	</definition>
 	
-	
-	 <!-- 
+	<!-- 
     ************************ 
     * usrIndex 
     ************************
     -->
 	<definition name="userIndex" extends="default">
-		<put name="content" value="/erp/userIndex.jsp" />
+		<put name="content" value="/adm/userIndex.jsp" />
 	</definition>
 	
-	
 	<!-- 
     ************************ 
-    * ProductType 
+    * Billboard 
     ************************
     -->
-    <definition name="productTypeList" extends="default">
-        <put name="content" value="/erp/productTypeList.jsp"/>
+    <definition name="billboardList" extends="default">
+        <put name="content" value="/costco/billboardList.jsp"/>
     </definition>
 
-    <definition name="productTypeForm" extends="default">
-        <put name="content" value="/erp/productTypeForm.jsp"/>
+    <definition name="billboardForm" extends="default">
+        <put name="content" value="/costco/billboardForm.jsp"/>
     </definition>
 
     <!-- 
     ************************ 
-    * Product 
+    * Rent 
     ************************
     -->
-    <definition name="productList" extends="default">
-        <put name="content" value="/erp/productList.jsp"/>
+    <definition name="rentList" extends="default">
+        <put name="content" value="/costco/rentList.jsp"/>
     </definition>
 
-    <definition name="productForm" extends="default">
-        <put name="content" value="/erp/productForm.jsp"/>
+    <definition name="rentForm" extends="default">
+        <put name="content" value="/costco/rentForm.jsp"/>
     </definition>
-    
-    
+
     <!-- 
     ************************ 
-    * Carousel 
+    * Store 
     ************************
     -->
-    <definition name="carouselList" extends="default">
-        <put name="content" value="/erp/carouselList.jsp"/>
+    <definition name="storeList" extends="default">
+        <put name="content" value="/costco/storeList.jsp"/>
     </definition>
 
-    <definition name="carouselForm" extends="default">
-        <put name="content" value="/erp/carouselForm.jsp"/>
+    <definition name="storeForm" extends="default">
+        <put name="content" value="/costco/storeForm.jsp"/>
     </definition>
-	
-	<!-- 
+
+    <!-- 
     ************************ 
-    * Web 
+    * Vendor 
     ************************
     -->
-
-    <definition name="webForm" extends="default">
-        <put name="content" value="/erp/webForm.jsp"/>
+    <definition name="vendorList" extends="default">
+        <put name="content" value="/costco/vendorList.jsp"/>
     </definition>
+
+    <definition name="vendorForm" extends="default">
+        <put name="content" value="/costco/vendorForm.jsp"/>
+    </definition>
+
     
     
 </tiles-definitions>

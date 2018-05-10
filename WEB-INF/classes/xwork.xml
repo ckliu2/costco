@@ -36,7 +36,7 @@
 		<!-- Login -->
 		<action name="login" class="loginAction">
 			<result name="input" type="redirect">admin.jsp${xworkParam}</result>
-			<result name="success" type="tiles">userIndex</result>
+			<result name="success" type="redirect">userIndex.do</result>
 		</action>
 		<action name="logout" class="loginAction" method="logout">
 			<result name="success" type="redirect">admin.jsp</result>
@@ -178,128 +178,116 @@
 		</action>
 		
 		
+		 <!-- Billboard -->
+        <action name="billboardList" class="billboardAction" method="list">
+            <result name="success" type="tiles">billboardList</result>
+            <result name="input" type="tiles">billboardList</result>
+        </action>
+
+        <action name="editBillboard" class="billboardAction" method="edit">
+            <result name="success" type="tiles">billboardForm</result>
+            <result name="input" type="tiles">billboardList</result>
+        </action>
+
+        <action name="copyBillboard" class="billboardAction" method="copy">
+            <result name="success" type="tiles">billboardForm</result>
+            <result name="input" type="tiles">billboardList</result>
+        </action>
+
+        <action name="saveBillboard" class="billboardAction">
+            <result name="delete" type="redirect">billboardList.do</result>
+            <result name="input" type="tiles">billboardForm</result>
+            <result name="success" type="chain">saveBillboardWithValidation</result>
+        </action>
+
+        <action name="saveBillboardWithValidation" class="billboardAction" method="save">
+            <result name="input" type="tiles">billboardForm</result>
+            <result name="success" type="chain">billboardList</result>
+        </action>
+
+    <!-- Rent -->
+        <action name="rentList" class="rentAction" method="list">
+            <result name="success" type="tiles">rentList</result>
+            <result name="input" type="tiles">rentList</result>
+        </action>
+
+        <action name="editRent" class="rentAction" method="edit">
+            <result name="success" type="tiles">rentForm</result>
+            <result name="input" type="tiles">rentList</result>
+        </action>
+
+        <action name="copyRent" class="rentAction" method="copy">
+            <result name="success" type="tiles">rentForm</result>
+            <result name="input" type="tiles">rentList</result>
+        </action>
+
+        <action name="saveRent" class="rentAction">
+            <result name="delete" type="redirect">rentList.do</result>
+            <result name="input" type="tiles">rentForm</result>
+            <result name="success" type="chain">saveRentWithValidation</result>
+        </action>
+
+        <action name="saveRentWithValidation" class="rentAction" method="save">
+            <result name="input" type="tiles">rentForm</result>
+            <result name="success" type="redirect">rentList.do${xworkParam}</result>
+        </action>
+
+<!-- ********************************************* -->
+
+    <!-- Store -->
+        <action name="storeList" class="storeAction" method="list">
+            <result name="success" type="tiles">storeList</result>
+            <result name="input" type="tiles">storeList</result>
+        </action>
+
+        <action name="editStore" class="storeAction" method="edit">
+            <result name="success" type="tiles">storeForm</result>
+            <result name="input" type="tiles">storeList</result>
+        </action>
+
+        <action name="copyStore" class="storeAction" method="copy">
+            <result name="success" type="tiles">storeForm</result>
+            <result name="input" type="tiles">storeList</result>
+        </action>
+
+        <action name="saveStore" class="storeAction">
+            <result name="delete" type="redirect">storeList.do</result>
+            <result name="input" type="tiles">storeForm</result>
+            <result name="success" type="chain">saveStoreWithValidation</result>
+        </action>
+
+        <action name="saveStoreWithValidation" class="storeAction" method="save">
+            <result name="input" type="tiles">storeForm</result>
+            <result name="success" type="chain">storeList</result>
+        </action>
+
+    <!-- Vendor -->
+        <action name="vendorList" class="vendorAction" method="list">
+            <result name="success" type="tiles">vendorList</result>
+            <result name="input" type="tiles">vendorList</result>
+        </action>
+
+        <action name="editVendor" class="vendorAction" method="edit">
+            <result name="success" type="tiles">vendorForm</result>
+            <result name="input" type="tiles">vendorList</result>
+        </action>
+
+        <action name="copyVendor" class="vendorAction" method="copy">
+            <result name="success" type="tiles">vendorForm</result>
+            <result name="input" type="tiles">vendorList</result>
+        </action>
+
+        <action name="saveVendor" class="vendorAction">
+            <result name="delete" type="redirect">vendorList.do</result>
+            <result name="input" type="tiles">vendorForm</result>
+            <result name="success" type="chain">saveVendorWithValidation</result>
+        </action>
+
+        <action name="saveVendorWithValidation" class="vendorAction" method="save">
+            <result name="input" type="tiles">vendorForm</result>
+            <result name="success" type="chain">vendorList</result>
+        </action>
 		
-		<!-- ProductType -->
-        <action name="productTypeList" class="productTypeAction" method="list">
-            <result name="success" type="tiles">productTypeList</result>
-            <result name="input" type="tiles">productTypeList</result>
-        </action>
-
-        <action name="editProductType" class="productTypeAction" method="edit">
-            <result name="success" type="tiles">productTypeForm</result>
-            <result name="input" type="tiles">productTypeList</result>
-        </action>
-
-        <action name="copyProductType" class="productTypeAction" method="copy">
-            <result name="success" type="tiles">productTypeForm</result>
-            <result name="input" type="tiles">productTypeList</result>
-        </action>
-
-        <action name="saveProductType" class="productTypeAction">
-            <result name="delete" type="redirect">productTypeList.html</result>
-            <result name="input" type="tiles">productTypeForm</result>
-            <result name="success" type="chain">saveProductTypeWithValidation</result>
-        </action>
-
-        <action name="saveProductTypeWithValidation" class="productTypeAction" method="save">
-            <result name="input" type="tiles">productTypeForm</result>
-            <result name="success">/common/backback.jsp</result>
-        </action>
-
-    <!-- Product -->
-        <action name="productList" class="productAction" method="list">
-            <result name="success" type="tiles">productList</result>
-            <result name="input" type="tiles">productList</result>
-        </action>
-
-        <action name="editProduct" class="productAction" method="edit">
-            <result name="success" type="tiles">productForm</result>
-            <result name="input" type="tiles">productList</result>
-        </action>
-
-
-        <action name="saveProduct" class="productAction">
-            <result name="delete" type="redirect">productList.do</result>
-            <result name="input" type="tiles">productForm</result>
-            <result name="success" type="chain">saveProductWithValidation</result>
-        </action>
-
-        <action name="saveProductWithValidation" class="productAction" method="save">
-            <result name="input" type="tiles">productForm</result>
-            <!-- 
-            <result name="success" type="tiles">productList</result>
-             -->
-            <result name="success" type="redirect">editProduct.do${xworkParam}</result>
-        </action>
-		
-		
-	 <!-- web -->
-	 
-	    <action name="index" class="indexAction" method="list">
-			<result name="success">/index.jsp</result>
-		</action>
-		
-		<action name="productCategory" class="indexAction" method="list">
-			<result name="success">/erp/productCategory.jsp</result>
-		</action>
-		
-		<action name="product" class="indexAction" method="list">
-			<result name="success">/erp/product.jsp</result>
-		</action>
-		
-		<action name="productSearch" class="indexAction" method="list">
-			<result name="success">/erp/productSearch.jsp</result>
-		</action>
-		
-		
-		<action name="sendMailJSON" class="indexAction" method="list">
-			<result name="success">/erp/sendMailJSON.jsp</result>
-		</action>
-		
-		
-		
-		<!-- Carousel -->
-        <action name="carouselList" class="carouselAction" method="list">
-            <result name="success" type="tiles">carouselList</result>
-            <result name="input" type="tiles">carouselList</result>
-        </action>
-
-        <action name="editCarousel" class="carouselAction" method="edit">
-            <result name="success" type="tiles">carouselForm</result>
-            <result name="input" type="tiles">carouselList</result>
-        </action>
-
-        <action name="copyCarousel" class="carouselAction" method="copy">
-            <result name="success" type="tiles">carouselForm</result>
-            <result name="input" type="tiles">carouselList</result>
-        </action>
-
-        <action name="saveCarousel" class="carouselAction">
-            <result name="delete" type="redirect">carouselList.do</result>
-            <result name="input" type="tiles">carouselForm</result>
-            <result name="success" type="chain">saveCarouselWithValidation</result>
-        </action>
-
-        <action name="saveCarouselWithValidation" class="carouselAction" method="save">
-            <result name="input" type="tiles">carouselForm</result>
-            <result name="success">/common/backback.jsp</result>
-        </action>
-		
-		<!-- Web -->
-		<action name="editWeb" class="webAction" method="edit">
-            <result name="success" type="tiles">webForm</result>            
-        </action>
-        
-         <action name="saveWeb" class="webAction">           
-            <result name="input" type="tiles">webForm</result>
-            <result name="success" type="chain">saveWebWithValidation</result>
-        </action>
-
-        <action name="saveWebWithValidation" class="webAction" method="save">
-            <result name="input" type="tiles">webForm</result>
-            <result name="success" type="redirect">editWeb.do${xworkParam}</result>
-        </action>
-
 		
 		
 	 </package>

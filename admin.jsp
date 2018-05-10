@@ -94,21 +94,25 @@ body {
           <tr>
             <td width="70" bgcolor="#6666FF" NOWRAP align="right">
               <div align="center"><span style="font-size:11pt;color:#FFFFFF">
-               手機
+               帳號
               </span></div>            
             </td>
             <td bgcolor="#E8E8FF">
-              <input type="text" tabindex="1" style="border-width:1px;border-style:inset;width:180pt;font-size:12pt;height:16pt" name="cellphone"  value="0912345678" />            </td>
+              <input type="text" tabindex="1" style="border-width:1px;border-style:inset;width:180pt;font-size:12pt;height:16pt" name="no"  value="admin" />            
+              </td>
             <td bgcolor="#FFFFFF" rowspan="2">
-                <input class="cLoginButton" type="submit"  value="<fmt:message key="common.login"/>"/>            </td>
+                <input class="cLoginButton" type="submit"  value="<fmt:message key="common.login"/>"/>            
+            </td>
           </tr>
           <tr>
             <td width="70" bgcolor="#6666FF" NOWRAP align="right">
               <div align="center"><span style="font-size:11pt;color:#FFFFFF">
               密碼
-              </span></div>            </td>
+              </span></div>            
+              </td>
             <td bgcolor="#E8E8FF">
-              <input type="password" tabindex="2" style="border-width:1px;border-style:inset;width:180pt;font-size:12pt;height:16pt" name="password"   value="1234678" />            </td>
+              <input type="password" tabindex="2" style="border-width:1px;border-style:inset;width:180pt;font-size:12pt;height:16pt" name="password"   value="admin" />            
+              </td>
           </tr>
           
           

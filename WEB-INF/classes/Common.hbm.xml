@@ -104,6 +104,7 @@
 		<id name="id" column="id" unsaved-value="null">
 			<generator class="identity" />
 		</id>
+		<property name="no" type="string" length="30" not-null="true" />
 		<property name="name" type="string" length="30" not-null="true" />
 		<property name="sname" type="string" length="30" not-null="true" />
 		<property name="officePhone" type="string" length="30" />

@@ -26,25 +26,20 @@
 	
 	
 	
-	<bean id="productTypeAction" class="com.erp.web.action.ProductTypeAction" singleton="false">
-        <property name="genericManager" ref="ERPManager"/>
+	<bean id="billboardAction" class="com.costco.web.action.BillboardAction" singleton="false">
+        <property name="genericManager" ref="costcoManager"/>
     </bean>
 
-    <bean id="productAction" class="com.erp.web.action.ProductAction" singleton="false">
-        <property name="genericManager" ref="ERPManager"/>
-    </bean>
-    
-    <bean id="indexAction" class="com.erp.web.action.IndexAction" singleton="false">
-        <property name="genericManager" ref="ERPManager"/>
-    </bean>
-    
-    
-    <bean id="carouselAction" class="com.erp.web.action.CarouselAction" singleton="false">
-        <property name="genericManager" ref="ERPManager"/>
+    <bean id="rentAction" class="com.costco.web.action.RentAction" singleton="false">
+        <property name="genericManager" ref="costcoManager"/>
     </bean>
 
-    <bean id="webAction" class="com.erp.web.action.WebAction" singleton="false">
-        <property name="genericManager" ref="ERPManager"/>
+    <bean id="storeAction" class="com.costco.web.action.StoreAction" singleton="false">
+        <property name="genericManager" ref="costcoManager"/>
+    </bean>
+
+    <bean id="vendorAction" class="com.costco.web.action.VendorAction" singleton="false">
+        <property name="genericManager" ref="costcoManager"/>
     </bean>
     
 	
