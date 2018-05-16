@@ -26,10 +26,15 @@
 		<id name="id" column="id" unsaved-value="null">
 			<generator class="identity" />
 		</id>
-		<property name="no" type="integer" not-null="true"/>
+		<property name="no" type="integer" not-null="true"/>		
+		<property name="width" type="float" not-null="true"/>
+		<property name="height" type="float" not-null="true"/>		
 		<many-to-one name="size" class="com.base.value.AppProperty" not-null="true"/>
 		<many-to-one name="cover" class="com.base.value.UploadedFile" />
 		<many-to-one name="store" class="com.costco.value.Store" not-null="true" />
+		<many-to-one name="location1" class="com.base.value.UploadedFile" cascade="all"/>
+		<many-to-one name="location2" class="com.base.value.UploadedFile" cascade="all"/>
+		<many-to-one name="location3" class="com.base.value.UploadedFile" cascade="all"/>
 	</class>
 	
 	 <!-- ************************* Vendor ************************ -->
@@ -56,10 +61,13 @@
 		<property name="year" type="integer" not-null="true"/>
 		<many-to-one name="billboard" class="com.costco.value.Billboard" not-null="true" />
 		<many-to-one name="vendor" class="com.costco.value.Vendor" not-null="true" />
+		<many-to-one name="photo" class="com.base.value.UploadedFile" cascade="all"/>	
 		<many-to-one name="cover" class="com.base.value.UploadedFile" cascade="all"/>		
 		<property name="isUpToDate" type="boolean">
           <column name="isUpToDate"  default="0" />
         </property>  		
+        
+        
 		<property name="lastModifiedDate" type="timestamp" />
 		<many-to-one name="lastModifiedUser" class="com.common.value.Member"/>
 		<many-to-one name="createdUser" class="com.common.value.Member" not-null="true" insert="true" update="false" />

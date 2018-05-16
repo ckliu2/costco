@@ -202,7 +202,7 @@
 
         <action name="saveBillboardWithValidation" class="billboardAction" method="save">
             <result name="input" type="tiles">billboardForm</result>
-            <result name="success" type="chain">billboardList</result>
+            <result name="success" type="redirect">billboardList.do${xworkParam}</result>
         </action>
 
     <!-- Rent -->

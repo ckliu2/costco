@@ -66,6 +66,22 @@
             /><span class="cInputValidationError"><ww:property value="showHtmlErrorMessage('rent.vendorId')"/></span>
         </td>
     </tr>
+    
+    <tr><td class="cInputCaption"><fmt:message key="rent.photo"/></td>
+        <td class="cInputColumn">
+        <ww:if test="rent.photo != null">
+            <input type="checkbox" name="removePhoto" onclick="if (this.checked == true) document.rentForm.filePhoto.style.display='inline'; else document.rentForm.filePhoto.style.display='none';" value="<ww:property value="rent.photo.fileName"/>"><fmt:message key="common.delete"/>
+            <a href="${ctx}/<fmt:message key="rent.uploadPhoto.relativeUrl"/>/<ww:property value="rent.id"/>/<ww:property value="rent.photo.fileName"/>"><ww:property value="rent.photo.fileName" /> (<ww:property value="rent.photo.size" /> bytes)</a><br>
+            <ww:file cssClass="cInputTextFieldLong" cssStyle="height:20px;display:none" name="filePhoto" accept="application/pdf,application/msword,application/vnd.ms-excel,application/vnd.ms-powerpoint,image/gif,image/jpeg,image/bmp,image/png,image/tiff" />
+            <ww:hidden name="rent.photoId" value="${rent.photo.id}"/>
+            <ww:hidden name="rent.photoFileName" value="${rent.photo.fileName}"/>
+        </ww:if>
+        <ww:else>
+            <ww:file cssClass="cInputTextFieldLong" cssStyle="height:20px" name="filePhoto" accept="application/pdf,application/msword,application/vnd.ms-excel,application/vnd.ms-powerpoint,image/gif,image/jpeg,image/bmp,image/png,image/tiff" /><br>
+        </ww:else>
+
+        </td>
+    </tr>
 
     <tr><td class="cInputCaption"><fmt:message key="rent.cover"/></td>
         <td class="cInputColumn">

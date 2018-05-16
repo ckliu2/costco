@@ -34,7 +34,7 @@
     <display:column titleKey="common.action">
         <ww:if test="recordEditable == true">
             <a href="editVendor.do?vendor.id=<c:out value="${row.id}"/>"><fmt:message key="common.edit"/></a>&nbsp;&nbsp;
-            <a href="#" onClick="javascript:return myConfirm('<fmt:message key="common.confirmDelete1"/><c:out value="${row.caption_}" /><fmt:message key="common.confirmDelete2"/>', 'form1', 'vendor.id', '${row.id}')"><fmt:message key="common.delete"/></a>
+            <a href="#" onClick="javascript:return myConfirm('<fmt:message key="common.confirmDelete1"/><c:out value="${row.name}" /><fmt:message key="common.confirmDelete2"/>', 'form1', 'vendor.id', '${row.id}')"><fmt:message key="common.delete"/></a>
         </ww:if>
         <ww:else>
            <a href="editVendor.do?vendor.id=<c:out value="${row.id}"/>"><fmt:message key="common.view"/></a>&nbsp;&nbsp;
