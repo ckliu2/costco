@@ -15,6 +15,15 @@
 		<property name="contact" type="string" length="30" />
 		<property name="title" type="string" length="30" />
 		<property name="phone" type="string" length="30"  />
+		
+		<property name="no" type="string"  />
+		<property name="deptNo" type="string"  />
+		<property name="product1" type="string"/>
+		<property name="product2" type="string"/>
+		<property name="product3" type="string"/>
+		<property name="product4" type="string"/>
+		<property name="product5" type="string"/>
+		
 		<property name="lastModifiedDate" type="timestamp" />
 		<property name="createdDate" type="timestamp" insert="true" update="false" />
 	</class>

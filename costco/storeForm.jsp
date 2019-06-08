@@ -52,6 +52,48 @@
             <ww:textfield name="store.phone" value="%{store.phone}" maxlength="30" cssClass="cInputTextFieldShort" />
         </td>
     </tr>
+    
+    <tr><td class="cInputCaption"><fmt:message key="store.no"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="store.no" value="%{store.no}"  cssClass="cInputTextField" />
+        </td>
+    </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="store.deptNo"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="store.deptNo" value="%{store.deptNo}"  cssClass="cInputTextField" />
+        </td>
+    </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="store.product1"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="store.product1" value="%{store.product1}"  cssClass="cInputTextField" />
+        </td>
+    </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="store.product2"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="store.product2" value="%{store.product2}"  cssClass="cInputTextField" />
+        </td>
+    </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="store.product3"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="store.product3" value="%{store.product3}"  cssClass="cInputTextField" />
+        </td>
+    </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="store.product4"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="store.product4" value="%{store.product4}"  cssClass="cInputTextField" />
+        </td>
+    </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="store.product5"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="store.product5" value="%{store.product5}"  cssClass="cInputTextField" />
+        </td>
+    </tr>
 
     <tr><td class="cInputCaption"><fmt:message key="common.lastModifiedDate"/></td>
         <td class="cInputColumn">
