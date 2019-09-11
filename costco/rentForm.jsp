@@ -67,6 +67,12 @@
         </td>
     </tr>
     
+    <tr><td class="cInputCaption"><fmt:message key="rent.screen"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="rent.screen" value="%{rent.screen}" cssClass="cInputTextField" />
+        </td>
+    </tr>
+    
     <tr><td class="cInputCaption"><fmt:message key="rent.photo"/></td>
         <td class="cInputColumn">
         <ww:if test="rent.photo != null">

@@ -15,15 +15,6 @@
 		<property name="contact" type="string" length="30" />
 		<property name="title" type="string" length="30" />
 		<property name="phone" type="string" length="30"  />
-		
-		<property name="no" type="string"  />
-		<property name="deptNo" type="string"  />
-		<property name="product1" type="string"/>
-		<property name="product2" type="string"/>
-		<property name="product3" type="string"/>
-		<property name="product4" type="string"/>
-		<property name="product5" type="string"/>
-		
 		<property name="lastModifiedDate" type="timestamp" />
 		<property name="createdDate" type="timestamp" insert="true" update="false" />
 	</class>
@@ -35,6 +26,7 @@
 		<id name="id" column="id" unsaved-value="null">
 			<generator class="identity" />
 		</id>
+		<property name="costcoId" type="string" length="30"/>
 		<property name="no" type="integer" not-null="true"/>		
 		<property name="width" type="float" not-null="true"/>
 		<property name="height" type="float" not-null="true"/>		
@@ -52,13 +44,21 @@
 		<id name="id" column="id" unsaved-value="null">
 			<generator class="identity" />
 		</id>
-		<property name="name" type="string" length="50" not-null="true" />
-		<property name="address" type="string" length="100" />
-		<property name="contact" type="string" length="30" />
-		<property name="title" type="string" length="30" />
-		<property name="phone" type="string" length="30"  />
+		<property name="name" type="string"  not-null="true" />
+		<property name="address" type="string"  />
+		<property name="contact" type="string"  />
+		<property name="title" type="string" />
+		<property name="phone" type="string"  />
 		<property name="lastModifiedDate" type="timestamp" />
-		<property name="createdDate" type="timestamp" insert="true" update="false" />		
+		<property name="createdDate" type="timestamp" insert="true" update="false" />	
+		
+		<property name="no" type="string"  />
+		<property name="deptNo" type="string"  />
+		<property name="product1" type="string"/>
+		<property name="product2" type="string"/>
+		<property name="product3" type="string"/>
+		<property name="product4" type="string"/>
+		<property name="product5" type="string"/>	
 	</class>
 	
 	 <!-- ************************* Rent ************************ -->
@@ -75,7 +75,7 @@
 		<property name="isUpToDate" type="boolean">
           <column name="isUpToDate"  default="0" />
         </property>  		
-        
+        <property name="screen" type="string"/>
         
 		<property name="lastModifiedDate" type="timestamp" />
 		<many-to-one name="lastModifiedUser" class="com.common.value.Member"/>

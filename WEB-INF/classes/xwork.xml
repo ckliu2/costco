@@ -204,6 +204,11 @@
             <result name="input" type="tiles">billboardForm</result>
             <result name="success" type="redirect">billboardList.do${xworkParam}</result>
         </action>
+        
+        <action name="storeSizeJSON" class="billboardAction" method="list">
+			<result name="success">/costco/storeSizeJSON.jsp</result>
+		</action>
+        
 
     <!-- Rent -->
         <action name="rentList" class="rentAction" method="list">
@@ -231,6 +236,42 @@
             <result name="input" type="tiles">rentForm</result>
             <result name="success" type="redirect">rentList.do${xworkParam}</result>
         </action>
+        
+        <action name="rentListJSON" class="rentAction" method="list">
+			<result name="success">/costco/rentListJSON.jsp</result>
+		</action>
+		
+		<action name="changeRent" class="rentAction" method="list">
+			<result name="success">/costco/changeRent.jsp</result>
+		</action>
+		
+		<action name="renewCheckJSON" class="rentAction" method="list1">
+			<result name="success">/costco/renewCheckJSON.jsp</result>
+		</action>
+        
+        <action name="renewAddJSON" class="rentAction" method="list1">
+			<result name="success">/costco/renewAddJSON.jsp</result>
+		</action>
+		
+		<action name="changeRentJSON" class="rentAction" method="list1">
+			<result name="success">/costco/changeRentJSON.jsp</result>
+		</action>
+		
+		<action name="changeRentAddJSON" class="rentAction" method="list1">
+			<result name="success">/costco/changeRentAddJSON.jsp</result>
+		</action>
+		
+		<action name="newRent" class="rentAction" method="list1">
+			<result name="success">/costco/newRent.jsp</result>
+		</action>
+		
+		<action name="saveNewRentJSON" class="rentAction" method="list1">
+			<result name="success">/costco/saveNewRentJSON.jsp</result>
+		</action>
+		
+		
+		
+        
 
 <!-- ********************************************* -->
 
@@ -287,6 +328,10 @@
             <result name="input" type="tiles">vendorForm</result>
             <result name="success" type="chain">vendorList</result>
         </action>
+        
+        <action name="vendorJSON" class="vendorAction" method="list">
+			<result name="success">/costco/vendorJSON.jsp</result>
+		</action>
 		
 		
 		

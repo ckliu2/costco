@@ -23,6 +23,13 @@
         </ww:else>
       </td>
     </tr>
+    
+    <tr><td class="cInputCaption"><fmt:message key="billboard.costcoId"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="billboard.costcoId" value="%{billboard.costcoId}" cssClass="cInputTextField" />
+        </td>
+    </tr>
+    
     <tr><td class="cInputCaption"><fmt:message key="billboard.no"/><span class="cRequired">*</span></td>
         <td class="cInputColumn">
             <ww:textfield name="billboard.no" value="%{billboard.no}" cssClass="cInputTextFieldTiny" /><span class="cInputValidationError"><ww:property value="showHtmlErrorMessage('billboard.no')"/></span>

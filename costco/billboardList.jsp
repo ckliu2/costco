@@ -25,6 +25,7 @@
 <display:table name="billboardList" class="list" cellspacing="1" requestURI="" id="row" export="false" pagesize="${GLOBAL_pagesize}" sort="list">
     <display:setProperty name="paging.banner.placement" value="bottom" />
     <display:column property="store.name" sortable="true" titleKey="billboard.store" style="text-align:left"/>
+    <display:column property="costcoId" sortable="true" titleKey="billboard.costcoId" />
     <display:column property="no" sortable="true" titleKey="billboard.no" />
     <display:column property="size.valueTw" sortable="true" titleKey="billboard.size" style="text-align:left"/>       	
     <display:column property="width" sortable="true" titleKey="billboard.width" />

@@ -23,11 +23,56 @@
         </ww:else>
       </td>
     </tr>
-    <tr><td class="cInputCaption"><fmt:message key="vendor.name"/><span class="cRequired">*</span></td>
+    
+    <tr><td class="cInputCaption"><fmt:message key="vendor.no"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="vendor.no" value="%{vendor.no}"  cssClass="cInputTextField" />
+        </td>
+    </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="vendor.deptNo"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="vendor.deptNo" value="%{vendor.deptNo}"  cssClass="cInputTextField" />
+        </td>
+    </tr>
+    
+     <tr><td class="cInputCaption"><fmt:message key="vendor.name"/><span class="cRequired">*</span></td>
         <td class="cInputColumn">
             <ww:textfield name="vendor.name" value="%{vendor.name}" maxlength="50" cssClass="cInputTextField" /><span class="cInputValidationError"><ww:property value="showHtmlErrorMessage('vendor.name')"/></span>
         </td>
     </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="vendor.product1"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="vendor.product1" value="%{vendor.product1}"  cssClass="cInputTextFieldLong" />
+        </td>
+    </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="vendor.product2"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="vendor.product2" value="%{vendor.product2}"  cssClass="cInputTextFieldLong" />
+        </td>
+    </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="vendor.product3"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="vendor.product3" value="%{vendor.product3}"  cssClass="cInputTextFieldLong" />
+        </td>
+    </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="vendor.product4"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="vendor.product4" value="%{vendor.product4}"  cssClass="cInputTextFieldLong" />
+        </td>
+    </tr>
+
+    <tr><td class="cInputCaption"><fmt:message key="vendor.product5"/></td>
+        <td class="cInputColumn">
+            <ww:textfield name="vendor.product5" value="%{vendor.product5}"  cssClass="cInputTextFieldLong" />
+        </td>
+    </tr>
+    
+   
 
     <tr><td class="cInputCaption"><fmt:message key="vendor.address"/></td>
         <td class="cInputColumn">

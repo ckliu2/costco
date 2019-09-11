@@ -11,7 +11,6 @@
             <ww:if test="functionOpenPeriodMessage != null">
                 <span class="cLabel2">(<fmt:message key="common.function.openPeriod"/>: <ww:property value="functionOpenPeriodMessage"/>)</span>
             </ww:if>
-            &nbsp;&nbsp;&nbsp;&nbsp;<button onclick="myCheckSubmitCopy('form1', <ww:property value="vendorList.size()"/>, 'selectedVendorId', 'copyVendor.do', '<fmt:message key="common.mustSelectOne"/>', '<fmt:message key="common.mustSelectOnlyOne"/>')" class="cButton"><fmt:message key="common.copy"/></button>
         </ww:if>
         <ww:else>
             <button onclick="location.href='editVendor.do'" DISABLED class="cButton"><fmt:message key="common.new"/></button><span class="cLabel2">(<fmt:message key="common.function.openPeriodExceed"/> )</span>
@@ -23,10 +22,15 @@
 <c:set var="count" value="0" />
 <display:table name="vendorList" class="list" cellspacing="1" requestURI="" id="row" export="false" pagesize="${GLOBAL_pagesize}" sort="list">
     <display:setProperty name="paging.banner.placement" value="bottom" />
-    <display:column titleKey="common.select">
-        <input type="checkbox" id="selectedVendorId_<c:out value="${count}"/>" name="selectedVendorId" value="<c:out value="${row.id}"/>">
-    </display:column>
+    <display:column property="no" sortable="true" titleKey="vendor.no" style="text-align:left" />
+    <display:column property="deptNo" sortable="true" titleKey="vendor.deptNo" style="text-align:left" />
     <display:column property="name" sortable="true" titleKey="vendor.name" style="text-align:left" />
+    
+    <display:column property="product1" sortable="true" titleKey="vendor.product1" style="text-align:left" />
+    <display:column property="product2" sortable="true" titleKey="vendor.product2" style="text-align:left" />
+    <display:column property="product3" sortable="true" titleKey="vendor.product3" style="text-align:left" />
+    <display:column property="product4" sortable="true" titleKey="vendor.product4" style="text-align:left" />
+    <display:column property="product5" sortable="true" titleKey="vendor.product5" style="text-align:left" />
     <display:column property="address" sortable="true" titleKey="vendor.address" style="text-align:left" />
     <display:column property="contact" sortable="true" titleKey="vendor.contact" style="text-align:left" />
     <display:column property="title" sortable="true" titleKey="vendor.title" style="text-align:left" />
@@ -51,7 +55,6 @@
             <ww:if test="functionOpenPeriodMessage != null">
                 <span class="cLabel2">(<fmt:message key="common.function.openPeriod"/>: <ww:property value="functionOpenPeriodMessage"/>)</span>
             </ww:if>
-            &nbsp;&nbsp;&nbsp;&nbsp;<button onclick="myCheckSubmitCopy('form1', <ww:property value="vendorList.size()"/>, 'selectedVendorId', 'copyVendor.do', '<fmt:message key="common.mustSelectOne"/>', '<fmt:message key="common.mustSelectOnlyOne"/>')" class="cButton"><fmt:message key="common.copy"/></button>
         </ww:if>
         <ww:else>
             <button onclick="location.href='editVendor.do'" DISABLED class="cButton"><fmt:message key="common.new"/></button><span class="cLabel2">(<fmt:message key="common.function.openPeriodExceed"/> )</span>
