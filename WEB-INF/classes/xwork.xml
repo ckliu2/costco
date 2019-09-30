@@ -208,6 +208,10 @@
         <action name="storeSizeJSON" class="billboardAction" method="list">
 			<result name="success">/costco/storeSizeJSON.jsp</result>
 		</action>
+		
+		<action name="storeSizeAllJSON" class="billboardAction" method="list">
+			<result name="success">/costco/storeSizeAllJSON.jsp</result>
+		</action>
         
 
     <!-- Rent -->
@@ -268,6 +272,42 @@
 		<action name="saveNewRentJSON" class="rentAction" method="list1">
 			<result name="success">/costco/saveNewRentJSON.jsp</result>
 		</action>
+		
+		<action name="rentSetting" class="rentAction" method="list1">
+			<result name="success">/costco/rentSetting.jsp</result>
+		</action>
+		
+		<action name="deleteRentJSON" class="rentAction" method="list1">
+			<result name="success">/costco/deleteRentJSON.jsp</result>
+		</action>
+		
+		<action name="billboardRentList" class="rentAction" method="list">
+			<result name="success">/costco/billboardRentList.jsp</result>
+		</action>
+		
+		<action name="billboardRentJSON" class="rentAction" method="list">
+			<result name="success">/costco/billboardRentJSON.jsp</result>
+		</action>
+		
+		<action name="editRentJSON" class="rentAction" method="list">
+			<result name="success">/costco/editRentJSON.jsp</result>
+		</action>
+		
+		<action name="checkRentJSON" class="rentAction" method="list">
+			<result name="success">/costco/checkRentJSON.jsp</result>
+		</action>
+		
+		
+		
+		<action name="editRentForm" class="rentAction" method="list">
+			<result name="success">/costco/editRentForm.jsp</result>
+		</action>
+		
+		<action name="saveRentJSON" class="rentAction" method="list">
+			<result name="success">/costco/saveRentJSON.jsp</result>
+		</action>
+		
+		
 		
 		
 		
@@ -332,6 +372,8 @@
         <action name="vendorJSON" class="vendorAction" method="list">
 			<result name="success">/costco/vendorJSON.jsp</result>
 		</action>
+		
+		
 		
 		
 		

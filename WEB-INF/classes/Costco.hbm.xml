@@ -77,11 +77,34 @@
         </property>  		
         <property name="screen" type="string"/>
         
+        <property name="fmYear" type="string"/>
+        <many-to-one name="kind" class="com.base.value.AppProperty" not-null="true"/>
+        
 		<property name="lastModifiedDate" type="timestamp" />
 		<many-to-one name="lastModifiedUser" class="com.common.value.Member"/>
 		<many-to-one name="createdUser" class="com.common.value.Member" not-null="true" insert="true" update="false" />
-		<property name="createdDate" type="timestamp" insert="true" update="false" />		
+		<property name="createdDate" type="timestamp" insert="true" update="false" />	
+		
+		<property name="assign" type="boolean"/>
+		<property name="memo" type="string"/>
+			
 	</class>
+	
+	
+	 <!-- ************************* BillboardRent ************************ -->
+	<class name="com.costco.value.BillboardRent" table="Costco_BillboardRent">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="rent" class="com.costco.value.Rent" not-null="true" />
+		<many-to-one name="store" class="com.costco.value.Store" not-null="true" />
+		<many-to-one name="billboard" class="com.costco.value.Billboard" not-null="true" />
+		<many-to-one name="vendor" class="com.costco.value.Vendor" />
+		<property name="kind" type="string"/>
+		<property name="fmYear" type="string"/>
+    </class>
+	
 	
 	
 </hibernate-mapping>

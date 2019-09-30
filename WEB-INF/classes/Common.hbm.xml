@@ -25,6 +25,11 @@
 		<property name="valueTw" type="string" length="350" not-null="false" />
 		<property name="valueUs" type="string" length="350" not-null="false" />
 		<property name="code" type="string" length="350" not-null="false" />
+		
+		<property name="code1" type="string" length="350" not-null="false" />
+		<property name="code2" type="string" length="350" not-null="false" />
+		<property name="code3" type="string" length="350" not-null="false" />
+		<property name="code4" type="string" length="350" not-null="false" />
 	</class>
 	<class name="com.base.value.UploadedFile" table="COM_UploadedFile">
 		<meta attribute="extends">BaseObject</meta>
