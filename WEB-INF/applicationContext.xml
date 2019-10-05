@@ -18,9 +18,25 @@
 			</props>
 		</property>
 	</bean>
+	
+	
 	<bean id="myProperties" class="com.base.util.MyProperties">
-
+	    <property name="onlinepdfPath">
+			<value>C:\\IIS\\Costco_RPT\\onlinepdf\\</value>
+		</property>
+		 <property name="vendorOrderPath">
+			<value>C:\\Tomcat\\webapps\\costco\\download\\vendorOrder.zip</value>
+		</property>
+		<property name="fmYear">
+			<value>FY20</value>
+		</property>
+		<property name="printServer">
+			<value>http://127.0.0.1:8077/?</value>
+		</property>
 	</bean>
+	
+	
+	
 	<bean id="commonManager" parent="txProxyTemplate">
 		<property name="target">
 			<bean class="com.common.service.impl.CommonManagerImpl">
@@ -37,5 +53,8 @@
             </bean>
         </property>
     </bean>
+    
+    
+    
 	
 </beans>

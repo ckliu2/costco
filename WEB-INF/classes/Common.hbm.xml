@@ -30,7 +30,11 @@
 		<property name="code2" type="string" length="350" not-null="false" />
 		<property name="code3" type="string" length="350" not-null="false" />
 		<property name="code4" type="string" length="350" not-null="false" />
+		<property name="memo" type="string" length="100" />
+		<property name="price" type="integer" />
+		
 	</class>
+	
 	<class name="com.base.value.UploadedFile" table="COM_UploadedFile">
 		<meta attribute="extends">BaseObject</meta>
 		<id name="id" column="id" unsaved-value="null">

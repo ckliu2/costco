@@ -10,6 +10,7 @@
 		<id name="id" column="id" unsaved-value="null">
 			<generator class="identity" />
 		</id>
+		<property name="no" type="string"/>
 		<property name="name" type="string" length="30" not-null="true" />
 		<property name="address" type="string" length="100" />
 		<property name="contact" type="string" length="30" />
@@ -103,6 +104,17 @@
 		<many-to-one name="vendor" class="com.costco.value.Vendor" />
 		<property name="kind" type="string"/>
 		<property name="fmYear" type="string"/>
+    </class>
+    
+     <!-- ************************* BillboardRent ************************ -->
+	<class name="com.costco.value.VendorPrice" table="Costco_VendorPrice">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="vendor" class="com.costco.value.Vendor" />
+		<property name="price" type="integer"/>
+		
     </class>
 	
 	

@@ -170,6 +170,12 @@
     <definition name="vendorForm" extends="default">
         <put name="content" value="/costco/vendorForm.jsp"/>
     </definition>
+    
+    
+    <definition name="vendorReportList" extends="default">
+        <put name="content" value="/costco/vendorReportList.jsp"/>
+    </definition>
+    
 
     
     
