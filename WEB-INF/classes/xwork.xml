@@ -281,8 +281,10 @@
 			<result name="success">/costco/deleteRentJSON.jsp</result>
 		</action>
 		
+		
+		
 		<action name="billboardRentList" class="rentAction" method="list">
-			<result name="success">/costco/billboardRentList.jsp</result>
+			<result name="success" type="tiles">billboardRentList</result>
 		</action>
 		
 		<action name="billboardRentJSON" class="rentAction" method="list">
@@ -311,11 +313,7 @@
 			<result name="success" type="tiles">vendorReportList</result>
 		</action>
 		
-		<!-- 
-		<action name="vendorReportList" class="rentAction" method="list">
-			<result name="success">/costco/vendorReportList.jsp</result>
-		</action>
-		 -->
+		
 		
 		<action name="vendorReportListJSON" class="rentAction" method="list">
 			<result name="success">/costco/vendorReportListJSON.jsp</result>

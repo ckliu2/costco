@@ -176,6 +176,12 @@
         <put name="content" value="/costco/vendorReportList.jsp"/>
     </definition>
     
+    
+    <definition name="billboardRentList" extends="default">
+        <put name="content" value="/costco/billboardRentList.jsp"/>
+    </definition>
+    
+    
 
     
     
