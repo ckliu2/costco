@@ -33,6 +33,9 @@
 		<property name="printServer">
 			<value>http://127.0.0.1:8077/?</value>
 		</property>
+		<property name="vendorExcelPath">
+			<value>C:\\Tomcat\\webapps\\costco\\download\\vendorExcel.xls</value>
+		</property>
 	</bean>
 	
 	

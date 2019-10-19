@@ -323,6 +323,11 @@
 			<result name="success">/costco/downloadPDFVendorReportListJSON.jsp</result>
 		</action>
 		
+		
+		<action name="vendorExcelJSON" class="rentAction" method="list">
+			<result name="success">/costco/vendorExcelJSON.jsp</result>
+		</action>
+		
         
 
 <!-- ********************************************* -->
