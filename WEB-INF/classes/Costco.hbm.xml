@@ -70,7 +70,7 @@
 		</id>
 		<property name="year" type="integer" not-null="true"/>
 		<many-to-one name="billboard" class="com.costco.value.Billboard" not-null="true" />
-		<many-to-one name="vendor" class="com.costco.value.Vendor" not-null="true" />
+		<many-to-one name="vendor" class="com.costco.value.Vendor"  />
 		<many-to-one name="photo" class="com.base.value.UploadedFile" cascade="all"/>	
 		<many-to-one name="cover" class="com.base.value.UploadedFile" cascade="all"/>		
 		<property name="isUpToDate" type="boolean">
@@ -88,6 +88,7 @@
 		
 		<property name="assign" type="boolean"/>
 		<property name="memo" type="string"/>
+		<property name="isEdited" type="boolean"/>
 			
 	</class>
 	
