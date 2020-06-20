@@ -59,7 +59,7 @@
 		<property name="product2" type="string"/>
 		<property name="product3" type="string"/>
 		<property name="product4" type="string"/>
-		<property name="product5" type="string"/>	
+		<property name="product5" type="string"/>
 	</class>
 	
 	 <!-- ************************* Rent ************************ -->
@@ -117,6 +117,18 @@
 		<property name="price" type="integer"/>
 		
     </class>
+    
+    <class name="com.costco.value.VendorQuantity" table="Costco_VendorQuantity">
+		<meta attribute="extends">BaseObject</meta>
+		<id name="id" column="id" unsaved-value="null">
+			<generator class="identity" />
+		</id>
+		<property name="fmYear" type="string"/>
+		<many-to-one name="vendor" class="com.costco.value.Vendor" not-null="true"/> 
+		<property name="quantity" type="integer"/>
+		
+    </class>
+	
 	
 	
 	

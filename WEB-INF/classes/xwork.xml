@@ -306,7 +306,7 @@
 		
 		
 		
-		<action name="editRentForm" class="rentAction" method="list">
+		<action name="editRentForm" class="rentAction" method="edit">
 			<result name="success">/costco/editRentForm.jsp</result>
 		</action>
 		
@@ -395,8 +395,13 @@
 			<result name="success">/costco/vendorJSON.jsp</result>
 		</action>
 		
+		<action name="quantityForm" class="vendorAction" method="list">
+			<result name="success">/costco/quantityForm.jsp</result>
+		</action>
 		
-		
+		<action name="quantityFormJSON" class="vendorAction" method="list">
+			<result name="success">/costco/quantityFormJSON.jsp</result>
+		</action>
 		
 		
 	 </package>
