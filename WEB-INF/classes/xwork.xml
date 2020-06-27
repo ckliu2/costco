@@ -333,7 +333,9 @@
 			<result name="success">/costco/vendorExcelJSON.jsp</result>
 		</action>
 		
-        
+        <action name="rollBackRentJSON" class="rentAction" method="list">
+			<result name="success">/costco/rollBackRentJSON.jsp</result>
+		</action>
 
 <!-- ********************************************* -->
 

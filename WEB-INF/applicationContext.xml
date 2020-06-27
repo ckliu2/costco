@@ -28,7 +28,7 @@
 			<value>C:\\Tomcat\\webapps\\costco\\download\\vendorOrder.zip</value>
 		</property>
 		<property name="fmYear">
-			<value>FY20</value>
+			<value>FY21</value>
 		</property>
 		<property name="printServer">
 			<value>http://127.0.0.1:8077/?</value>
